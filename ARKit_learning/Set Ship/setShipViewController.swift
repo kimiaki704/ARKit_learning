@@ -72,7 +72,7 @@ final class setShipViewController: UIViewController {
 extension setShipViewController: ARSCNViewDelegate {
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
         if anchor is ARPlaneAnchor {
-            print("nmnonoaweifoweoifwe")
+            print("heimen")
         }
     }
 }
