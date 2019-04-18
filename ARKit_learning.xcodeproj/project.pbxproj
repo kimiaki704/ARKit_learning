@@ -15,6 +15,8 @@
 		046126992268559F002AB0ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 046126972268559F002AB0ED /* LaunchScreen.storyboard */; };
 		046126A42268559F002AB0ED /* ARKit_learningTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046126A32268559F002AB0ED /* ARKit_learningTests.swift */; };
 		046126AF2268559F002AB0ED /* ARKit_learningUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046126AE2268559F002AB0ED /* ARKit_learningUITests.swift */; };
+		046126BE22685616002AB0ED /* setShip.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 046126BD22685616002AB0ED /* setShip.storyboard */; };
+		046126C022685624002AB0ED /* setShipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046126BF22685624002AB0ED /* setShipViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		046126AA2268559F002AB0ED /* ARKit_learningUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ARKit_learningUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		046126AE2268559F002AB0ED /* ARKit_learningUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARKit_learningUITests.swift; sourceTree = "<group>"; };
 		046126B02268559F002AB0ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		046126BD22685616002AB0ED /* setShip.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = setShip.storyboard; sourceTree = "<group>"; };
+		046126BF22685624002AB0ED /* setShipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = setShipViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,11 +103,12 @@
 		0461268B2268559E002AB0ED /* ARKit_learning */ = {
 			isa = PBXGroup;
 			children = (
+				046126BC22685603002AB0ED /* Set Ship */,
 				0461268C2268559E002AB0ED /* AppDelegate.swift */,
-				0461268E2268559E002AB0ED /* art.scnassets */,
 				046126902268559E002AB0ED /* ViewController.swift */,
 				046126922268559E002AB0ED /* Main.storyboard */,
 				046126952268559F002AB0ED /* Assets.xcassets */,
+				0461268E2268559E002AB0ED /* art.scnassets */,
 				046126972268559F002AB0ED /* LaunchScreen.storyboard */,
 				0461269A2268559F002AB0ED /* Info.plist */,
 			);
@@ -126,6 +131,15 @@
 				046126B02268559F002AB0ED /* Info.plist */,
 			);
 			path = ARKit_learningUITests;
+			sourceTree = "<group>";
+		};
+		046126BC22685603002AB0ED /* Set Ship */ = {
+			isa = PBXGroup;
+			children = (
+				046126BD22685616002AB0ED /* setShip.storyboard */,
+				046126BF22685624002AB0ED /* setShipViewController.swift */,
+			);
+			path = "Set Ship";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,6 +249,7 @@
 				0461268F2268559E002AB0ED /* art.scnassets in Resources */,
 				046126992268559F002AB0ED /* LaunchScreen.storyboard in Resources */,
 				046126962268559F002AB0ED /* Assets.xcassets in Resources */,
+				046126BE22685616002AB0ED /* setShip.storyboard in Resources */,
 				046126942268559E002AB0ED /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -261,6 +276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				046126912268559E002AB0ED /* ViewController.swift in Sources */,
+				046126C022685624002AB0ED /* setShipViewController.swift in Sources */,
 				0461268D2268559E002AB0ED /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
