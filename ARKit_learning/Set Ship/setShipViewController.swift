@@ -13,6 +13,13 @@ final class setShipViewController: UIViewController {
     
     @IBOutlet weak var sceneView: ARSCNView!
     
+    private let configuration: ARWorldTrackingConfiguration = {
+        let conf = ARWorldTrackingConfiguration()
+        conf.planeDetection = .horizontal
+        conf.environmentTexturing = .automatic
+        return conf
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,10 +29,7 @@ final class setShipViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        let configuration = ARWorldTrackingConfiguration()
-        configuration.planeDetection = [.horizontal, .vertical]
-        
-        sceneView.session.run(configuration, options: [])
+        sceneView.session.run(configuration)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
