@@ -13,7 +13,7 @@
         <!--Text Save On Plane View Controller-->
         <scene sceneID="I0j-48-Fq4">
             <objects>
-                <viewController id="4PD-Uq-RXB" customClass="textSaveOnPlaneViewController" customModule="ARKit_learning" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="4PD-Uq-RXB" customClass="TextSaveOnPlaneViewController" customModule="ARKit_learning" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dU1-pF-RlU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

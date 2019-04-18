@@ -1,5 +1,5 @@
 //
-//  textSaveOnPlaneViewController.swift
+//  TextSaveOnPlaneViewController.swift
 //  ARKit_learning
 //
 //  Created by 鈴木公章 on 2019/04/18.
@@ -9,7 +9,7 @@
 import UIKit
 import ARKit
 
-final class textSaveOnPlaneViewController: UIViewController {
+final class TextSaveOnPlaneViewController: UIViewController {
     
     @IBOutlet weak var sceneView: ARSCNView!
     @IBOutlet weak var saveButton: UIButton!
@@ -107,7 +107,7 @@ final class textSaveOnPlaneViewController: UIViewController {
     }
 }
 
-extension textSaveOnPlaneViewController: ARSCNViewDelegate {
+extension TextSaveOnPlaneViewController: ARSCNViewDelegate {
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
         if anchor.name == "Text" {
             let textGeometory = SCNText(string: "たくけん", extrusionDepth: 10)

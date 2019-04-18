@@ -13,7 +13,7 @@
         <!--Drawing View Controller-->
         <scene sceneID="dwB-Yr-oac">
             <objects>
-                <viewController id="wTS-b0-uuY" customClass="drawingViewController" customModule="ARKit_learning" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="wTS-b0-uuY" customClass="DrawingViewController" customModule="ARKit_learning" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qql-HN-ZuO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

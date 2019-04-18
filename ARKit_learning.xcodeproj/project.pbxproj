@@ -15,12 +15,14 @@
 		046126992268559F002AB0ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 046126972268559F002AB0ED /* LaunchScreen.storyboard */; };
 		046126A42268559F002AB0ED /* ARKit_learningTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046126A32268559F002AB0ED /* ARKit_learningTests.swift */; };
 		046126AF2268559F002AB0ED /* ARKit_learningUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046126AE2268559F002AB0ED /* ARKit_learningUITests.swift */; };
-		046126BE22685616002AB0ED /* setShip.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 046126BD22685616002AB0ED /* setShip.storyboard */; };
-		046126C022685624002AB0ED /* setShipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046126BF22685624002AB0ED /* setShipViewController.swift */; };
-		046126C322686461002AB0ED /* drawing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 046126C222686461002AB0ED /* drawing.storyboard */; };
-		046126C522686482002AB0ED /* drawingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046126C422686482002AB0ED /* drawingViewController.swift */; };
-		046126C922686A1E002AB0ED /* textSaveOnPlane.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 046126C822686A1E002AB0ED /* textSaveOnPlane.storyboard */; };
-		046126CB22686A2F002AB0ED /* textSaveOnPlaneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046126CA22686A2F002AB0ED /* textSaveOnPlaneViewController.swift */; };
+		046126BE22685616002AB0ED /* SetShip.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 046126BD22685616002AB0ED /* SetShip.storyboard */; };
+		046126C022685624002AB0ED /* SetShipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046126BF22685624002AB0ED /* SetShipViewController.swift */; };
+		046126C322686461002AB0ED /* Drawing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 046126C222686461002AB0ED /* Drawing.storyboard */; };
+		046126C522686482002AB0ED /* DrawingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046126C422686482002AB0ED /* DrawingViewController.swift */; };
+		046126C922686A1E002AB0ED /* TextSaveOnPlane.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 046126C822686A1E002AB0ED /* TextSaveOnPlane.storyboard */; };
+		046126CB22686A2F002AB0ED /* TextSaveOnPlaneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046126CA22686A2F002AB0ED /* TextSaveOnPlaneViewController.swift */; };
+		046126CE2268810A002AB0ED /* SetMirror.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 046126CD2268810A002AB0ED /* SetMirror.storyboard */; };
+		046126D02268811B002AB0ED /* SetMirrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046126CF2268811B002AB0ED /* SetMirrorViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,12 +57,14 @@
 		046126AA2268559F002AB0ED /* ARKit_learningUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ARKit_learningUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		046126AE2268559F002AB0ED /* ARKit_learningUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARKit_learningUITests.swift; sourceTree = "<group>"; };
 		046126B02268559F002AB0ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		046126BD22685616002AB0ED /* setShip.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = setShip.storyboard; sourceTree = "<group>"; };
-		046126BF22685624002AB0ED /* setShipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = setShipViewController.swift; sourceTree = "<group>"; };
-		046126C222686461002AB0ED /* drawing.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = drawing.storyboard; sourceTree = "<group>"; };
-		046126C422686482002AB0ED /* drawingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = drawingViewController.swift; sourceTree = "<group>"; };
-		046126C822686A1E002AB0ED /* textSaveOnPlane.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = textSaveOnPlane.storyboard; sourceTree = "<group>"; };
-		046126CA22686A2F002AB0ED /* textSaveOnPlaneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = textSaveOnPlaneViewController.swift; sourceTree = "<group>"; };
+		046126BD22685616002AB0ED /* SetShip.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SetShip.storyboard; sourceTree = "<group>"; };
+		046126BF22685624002AB0ED /* SetShipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetShipViewController.swift; sourceTree = "<group>"; };
+		046126C222686461002AB0ED /* Drawing.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Drawing.storyboard; sourceTree = "<group>"; };
+		046126C422686482002AB0ED /* DrawingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingViewController.swift; sourceTree = "<group>"; };
+		046126C822686A1E002AB0ED /* TextSaveOnPlane.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TextSaveOnPlane.storyboard; sourceTree = "<group>"; };
+		046126CA22686A2F002AB0ED /* TextSaveOnPlaneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextSaveOnPlaneViewController.swift; sourceTree = "<group>"; };
+		046126CD2268810A002AB0ED /* SetMirror.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SetMirror.storyboard; sourceTree = "<group>"; };
+		046126CF2268811B002AB0ED /* SetMirrorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetMirrorViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +115,7 @@
 		0461268B2268559E002AB0ED /* ARKit_learning */ = {
 			isa = PBXGroup;
 			children = (
+				046126CC226880DF002AB0ED /* Set Mirror */,
 				046126C7226869E4002AB0ED /* Text Save on Plane */,
 				046126C122686421002AB0ED /* Drawing */,
 				046126BC22685603002AB0ED /* Set Ship */,
@@ -146,8 +151,8 @@
 		046126BC22685603002AB0ED /* Set Ship */ = {
 			isa = PBXGroup;
 			children = (
-				046126BD22685616002AB0ED /* setShip.storyboard */,
-				046126BF22685624002AB0ED /* setShipViewController.swift */,
+				046126BD22685616002AB0ED /* SetShip.storyboard */,
+				046126BF22685624002AB0ED /* SetShipViewController.swift */,
 			);
 			path = "Set Ship";
 			sourceTree = "<group>";
@@ -155,8 +160,8 @@
 		046126C122686421002AB0ED /* Drawing */ = {
 			isa = PBXGroup;
 			children = (
-				046126C222686461002AB0ED /* drawing.storyboard */,
-				046126C422686482002AB0ED /* drawingViewController.swift */,
+				046126C222686461002AB0ED /* Drawing.storyboard */,
+				046126C422686482002AB0ED /* DrawingViewController.swift */,
 			);
 			path = Drawing;
 			sourceTree = "<group>";
@@ -164,10 +169,19 @@
 		046126C7226869E4002AB0ED /* Text Save on Plane */ = {
 			isa = PBXGroup;
 			children = (
-				046126C822686A1E002AB0ED /* textSaveOnPlane.storyboard */,
-				046126CA22686A2F002AB0ED /* textSaveOnPlaneViewController.swift */,
+				046126C822686A1E002AB0ED /* TextSaveOnPlane.storyboard */,
+				046126CA22686A2F002AB0ED /* TextSaveOnPlaneViewController.swift */,
 			);
 			path = "Text Save on Plane";
+			sourceTree = "<group>";
+		};
+		046126CC226880DF002AB0ED /* Set Mirror */ = {
+			isa = PBXGroup;
+			children = (
+				046126CD2268810A002AB0ED /* SetMirror.storyboard */,
+				046126CF2268811B002AB0ED /* SetMirrorViewController.swift */,
+			);
+			path = "Set Mirror";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,12 +288,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				046126C922686A1E002AB0ED /* textSaveOnPlane.storyboard in Resources */,
+				046126C922686A1E002AB0ED /* TextSaveOnPlane.storyboard in Resources */,
 				0461268F2268559E002AB0ED /* art.scnassets in Resources */,
-				046126C322686461002AB0ED /* drawing.storyboard in Resources */,
+				046126CE2268810A002AB0ED /* SetMirror.storyboard in Resources */,
+				046126C322686461002AB0ED /* Drawing.storyboard in Resources */,
 				046126992268559F002AB0ED /* LaunchScreen.storyboard in Resources */,
 				046126962268559F002AB0ED /* Assets.xcassets in Resources */,
-				046126BE22685616002AB0ED /* setShip.storyboard in Resources */,
+				046126BE22685616002AB0ED /* SetShip.storyboard in Resources */,
 				046126942268559E002AB0ED /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -305,10 +320,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				046126C522686482002AB0ED /* drawingViewController.swift in Sources */,
+				046126C522686482002AB0ED /* DrawingViewController.swift in Sources */,
 				046126912268559E002AB0ED /* ViewController.swift in Sources */,
-				046126CB22686A2F002AB0ED /* textSaveOnPlaneViewController.swift in Sources */,
-				046126C022685624002AB0ED /* setShipViewController.swift in Sources */,
+				046126D02268811B002AB0ED /* SetMirrorViewController.swift in Sources */,
+				046126CB22686A2F002AB0ED /* TextSaveOnPlaneViewController.swift in Sources */,
+				046126C022685624002AB0ED /* SetShipViewController.swift in Sources */,
 				0461268D2268559E002AB0ED /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

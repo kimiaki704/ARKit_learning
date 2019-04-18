@@ -1,5 +1,5 @@
 //
-//  drawingViewController.swift
+//  DrawingViewController.swift
 //  ARKit_learning
 //
 //  Created by 鈴木公章 on 2019/04/18.
@@ -9,7 +9,7 @@
 import UIKit
 import ARKit
 
-final class drawingViewController: UIViewController {
+final class DrawingViewController: UIViewController {
     
     @IBOutlet weak var sceneView: ARSCNView!
     
@@ -67,7 +67,7 @@ final class drawingViewController: UIViewController {
     }
 }
 
-extension drawingViewController: ARSCNViewDelegate {
+extension DrawingViewController: ARSCNViewDelegate {
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
         if anchor is ARPlaneAnchor {
             print("heimen")

@@ -13,7 +13,7 @@
         <!--Set Ship View Controller-->
         <scene sceneID="llN-hm-7Dl">
             <objects>
-                <viewController id="TaR-hq-n66" customClass="setShipViewController" customModule="ARKit_learning" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="TaR-hq-n66" customClass="SetShipViewController" customModule="ARKit_learning" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="usq-1J-v6R">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
