@@ -23,6 +23,8 @@
 		046126CB22686A2F002AB0ED /* TextSaveOnPlaneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046126CA22686A2F002AB0ED /* TextSaveOnPlaneViewController.swift */; };
 		046126CE2268810A002AB0ED /* SetMirror.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 046126CD2268810A002AB0ED /* SetMirror.storyboard */; };
 		046126D02268811B002AB0ED /* SetMirrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046126CF2268811B002AB0ED /* SetMirrorViewController.swift */; };
+		046126D322688579002AB0ED /* Card.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 046126D222688579002AB0ED /* Card.storyboard */; };
+		046126D52268858A002AB0ED /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046126D42268858A002AB0ED /* CardViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +67,8 @@
 		046126CA22686A2F002AB0ED /* TextSaveOnPlaneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextSaveOnPlaneViewController.swift; sourceTree = "<group>"; };
 		046126CD2268810A002AB0ED /* SetMirror.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SetMirror.storyboard; sourceTree = "<group>"; };
 		046126CF2268811B002AB0ED /* SetMirrorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetMirrorViewController.swift; sourceTree = "<group>"; };
+		046126D222688579002AB0ED /* Card.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Card.storyboard; sourceTree = "<group>"; };
+		046126D42268858A002AB0ED /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +119,7 @@
 		0461268B2268559E002AB0ED /* ARKit_learning */ = {
 			isa = PBXGroup;
 			children = (
+				046126D122688561002AB0ED /* Card */,
 				046126CC226880DF002AB0ED /* Set Mirror */,
 				046126C7226869E4002AB0ED /* Text Save on Plane */,
 				046126C122686421002AB0ED /* Drawing */,
@@ -182,6 +187,15 @@
 				046126CF2268811B002AB0ED /* SetMirrorViewController.swift */,
 			);
 			path = "Set Mirror";
+			sourceTree = "<group>";
+		};
+		046126D122688561002AB0ED /* Card */ = {
+			isa = PBXGroup;
+			children = (
+				046126D222688579002AB0ED /* Card.storyboard */,
+				046126D42268858A002AB0ED /* CardViewController.swift */,
+			);
+			path = Card;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,6 +310,7 @@
 				046126962268559F002AB0ED /* Assets.xcassets in Resources */,
 				046126BE22685616002AB0ED /* SetShip.storyboard in Resources */,
 				046126942268559E002AB0ED /* Main.storyboard in Resources */,
+				046126D322688579002AB0ED /* Card.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,6 +336,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				046126C522686482002AB0ED /* DrawingViewController.swift in Sources */,
+				046126D52268858A002AB0ED /* CardViewController.swift in Sources */,
 				046126912268559E002AB0ED /* ViewController.swift in Sources */,
 				046126D02268811B002AB0ED /* SetMirrorViewController.swift in Sources */,
 				046126CB22686A2F002AB0ED /* TextSaveOnPlaneViewController.swift in Sources */,

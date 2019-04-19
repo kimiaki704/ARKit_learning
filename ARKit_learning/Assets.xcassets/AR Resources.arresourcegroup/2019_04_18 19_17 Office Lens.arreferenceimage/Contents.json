@@ -1,0 +1,16 @@
+{
+  "images" : [
+    {
+      "idiom" : "universal",
+      "filename" : "2019_04_18 19_17 Office Lens.jpg"
+    }
+  ],
+  "info" : {
+    "version" : 1,
+    "author" : "xcode"
+  },
+  "properties" : {
+    "width" : 12,
+    "unit" : "centimeters"
+  }
+}
