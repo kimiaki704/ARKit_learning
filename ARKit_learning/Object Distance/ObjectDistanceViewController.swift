@@ -11,62 +11,66 @@ import ARKit
 
 final class ObjectDistanceViewController: UIViewController {
     
-    @IBOutlet weak var sceneView: ARSCNView!
+    @IBOutlet private weak var sceneView: ARSCNView!
     
-    enum CardType: String {
-        //        case kingBlack = "king_black"
-        //        case kingRed = "king_red"
-        case kingBlack = "ninebot_1"
-        case kingRed = "ninebot_2"
+    private var pentagonBlueNode: SCNNode?
+    private var pentagonRedNode: SCNNode?
+    private var pentagonYellowNode: SCNNode?
+    private var pentagonGreenNode: SCNNode?
+    private var pentagonPurpleNode: SCNNode?
+    private var pentagonBlackNode: SCNNode?
+    private var nodesArray = [SCNNode]()
+    private var referenceImageName = String()
+    private var isJunping = false
+    
+    private enum DistanceStatus {
+        case zero
+        case one
+        case two
+        case three
+        case four
+        case five
     }
-    
-    var pentagonBlueNode: SCNNode?
-    var pentagonRedNode: SCNNode?
-    var imageNodes = [SCNNode]()
-    var isJunping = false
-    
-    private let configuration: ARWorldTrackingConfiguration = {
-        let conf = ARWorldTrackingConfiguration()
-        
-        guard let object = ARReferenceObject.referenceObjects(inGroupNamed: "AR Objects", bundle: nil) else {
-            fatalError()
-        }
-        conf.detectionObjects = object
-        
-        return conf
-    }()
+    private var distanceStatus: DistanceStatus = .zero
     
     private let imageConfiguration: ARImageTrackingConfiguration = {
         let conf = ARImageTrackingConfiguration()
         
-        let images = ARReferenceImage.referenceImages(inGroupNamed: "AR Ninebot", bundle: nil)
+        let images = ARReferenceImage.referenceImages(inGroupNamed: "AR Tranp", bundle: nil)
         conf.trackingImages = images!
-        conf.maximumNumberOfTrackedImages = 2
+        conf.maximumNumberOfTrackedImages = 1
         return conf
     }()
     
-    private var actionButtonNode: SCNNode!
+    override var prefersStatusBarHidden: Bool { return true }
+    override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation { return .slide }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        sceneView.showsStatistics = true
+        sceneView.debugOptions = [ARSCNDebugOptions.showFeaturePoints,ARSCNDebugOptions.showWorldOrigin]
         sceneView.delegate = self
         
         let pentagonBlueScene = SCNScene(named: "art.scnassets/pentagonal_blue.scn")
         let pentagonRedScene = SCNScene(named: "art.scnassets/pentagonal_red.scn")
+        let pentagonYellowScene = SCNScene(named: "art.scnassets/pentagonal_yellow.scn")
+        let pentagonGreenScene = SCNScene(named: "art.scnassets/pentagonal_green.scn")
+        let pentagonPurpleScene = SCNScene(named: "art.scnassets/pentagonal_purple.scn")
+        let pentagonBlackScene = SCNScene(named: "art.scnassets/pentagonal_black.scn")
         
-        pentagonBlueNode = pentagonBlueScene?.rootNode
-        pentagonRedNode = pentagonRedScene?.rootNode
-        
-        actionButtonNode = SCNScene(named: "art.scnassets/action_button.scn")!.rootNode
+        pentagonBlueNode = pentagonBlueScene?.rootNode.childNodes.first!
+        pentagonRedNode = pentagonRedScene?.rootNode.childNodes.first!
+        pentagonYellowNode = pentagonYellowScene?.rootNode.childNodes.first!
+        pentagonGreenNode = pentagonGreenScene?.rootNode.childNodes.first!
+        pentagonPurpleNode = pentagonPurpleScene?.rootNode.childNodes.first!
+        pentagonBlackNode = pentagonBlackScene?.rootNode.childNodes.first!
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        
-        sceneView.session.run(configuration)
-        //        sceneView.session.run(imageConfiguration)
+        sceneView.session.run(imageConfiguration)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -74,164 +78,163 @@ final class ObjectDistanceViewController: UIViewController {
         
         sceneView.session.pause()
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        resetSceneView()
+//        let ship = SCNScene(named: "art.scnassets/ship.scn")!
+//        let shipNode = ship.rootNode.childNodes.first!
+//        shipNode.scale = SCNVector3(0.1, 0.1, 0.1)
+//
+//        //        guard let location = touches.first?.location(in: sceneView) else {
+//        //            return
+//        //        }
+//        //        let screenPosition: SCNVector3 = SCNVector3(location.x, location.y, 0.996)
+//        //        let worldPosition = sceneView.unprojectPoint(screenPosition)
+//
+//        let infrontCamera = SCNVector3Make(0, 0, -0.3)
+//
+//        guard let cameraNode = sceneView.pointOfView else {
+//            return
+//        }
+//        let pointInWorld = cameraNode.convertPosition(infrontCamera, to: nil)
+//        var screenPosition = sceneView.projectPoint(pointInWorld)
+//
+//        guard let location = touches.first?.location(in: sceneView) else {
+//            return
+//        }
+//
+////        screenPosition.x = Float(location.x)
+////        screenPosition.y = Float(location.y)
+//
+////        let worldPosition = sceneView.unprojectPoint(screenPosition)
+//
+////        shipNode.eulerAngles = cameraNode.eulerAngles
+//
+//        shipNode.position = SCNVector3Make(0, 0, 0)
+//        sceneView.scene.rootNode.addChildNode(shipNode)
+    }
 }
 
 extension ObjectDistanceViewController: ARSCNViewDelegate {
-    //    func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
-    //        guard let imageAnchor = anchor as? ARImageAnchor else {
-    //            return
-    //        }
-    //        print(node.worldPosition)
-    //        print(imageAnchor)
-    //        node.addChildNode(actionButtonNode)
-    //    }
-    
-    //    func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
-    //        let node = SCNNode()
-    //
-    //        if let objectAnchor = anchor as? ARObjectAnchor {
-    //            let size = objectAnchor.referenceObject.accessibilityFrame
-    //            let plane = SCNPlane(width: size.width, height: size.height)
-    //            plane.firstMaterial?.diffuse.contents = UIColor.white.withAlphaComponent(0.5)
-    //            //            plane.firstMaterial?.diffuse.contents = UIImage(named: "test")!.alpha(0.5)
-    //            plane.cornerRadius = 0.005
-    //
-    //            let planeNode = SCNNode(geometry: plane)
-    //            planeNode.eulerAngles.x = -.pi / 2
-    //            //            planeNode.position = SCNVector3(0, 0, 20)
-    //            node.addChildNode(planeNode)
-    //
-    //            var shapeNode: SCNNode?
-    //            //            switch imageAnchor.referenceImage.name {
-    //            //            case CardType.kingBlack.rawValue:
-    //            //                shapeNode = pentagonBlueNode
-    //            //            case CardType.kingRed.rawValue:
-    //            //                shapeNode = pentagonRedNode
-    //            //            default:
-    //            //                break
-    //            //            }
-    //
-    //            print("---------------")
-    //            print(objectAnchor.referenceObject.name)
-    //            shapeNode = pentagonBlueNode
-    //
-    //            let shapeSpin = SCNAction.rotateBy(x: 0, y: 2 * .pi, z: 0, duration: 10)
-    //            let repeatSpin = SCNAction.repeatForever(shapeSpin)
-    //            shapeNode?.runAction(repeatSpin)
-    //
-    //            guard let shape = shapeNode else {
-    //                return nil
-    //            }
-    //            node.addChildNode(shape)
-    //            imageNodes.append(node)
-    //
-    //            return node
-    //        }
-    //
-    //        if let imageAnchor = anchor as? ARImageAnchor {
-    //            let size = imageAnchor.referenceImage.physicalSize
-    //            let plane = SCNPlane(width: size.width, height: size.height)
-    //            plane.firstMaterial?.diffuse.contents = UIColor.white.withAlphaComponent(0.5)
-    ////            plane.firstMaterial?.diffuse.contents = UIImage(named: "test")!.alpha(0.5)
-    //            plane.cornerRadius = 0.005
-    //
-    //            let planeNode = SCNNode(geometry: plane)
-    //            planeNode.eulerAngles.x = -.pi / 2
-    ////            planeNode.position = SCNVector3(0, 0, 20)
-    //            node.addChildNode(planeNode)
-    //
-    //            var shapeNode: SCNNode?
-    ////            switch imageAnchor.referenceImage.name {
-    ////            case CardType.kingBlack.rawValue:
-    ////                shapeNode = pentagonBlueNode
-    ////            case CardType.kingRed.rawValue:
-    ////                shapeNode = pentagonRedNode
-    ////            default:
-    ////                break
-    ////            }
-    //
-    //            print("---------------")
-    //            print(imageAnchor.referenceImage.name)
-    //            shapeNode = pentagonBlueNode
-    //
-    //            let shapeSpin = SCNAction.rotateBy(x: 0, y: 2 * .pi, z: 0, duration: 10)
-    //            let repeatSpin = SCNAction.repeatForever(shapeSpin)
-    //            shapeNode?.runAction(repeatSpin)
-    //
-    //            guard let shape = shapeNode else {
-    //                return nil
-    //            }
-    //            node.addChildNode(shape)
-    ////            imageNodes.append(node)
-    //
-    //            return node
-    //        }
-    //
-    //        return nil
-    //    }
     
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
-        //        let node = SCNNode()
         
-        if let objectAnchor = anchor as? ARObjectAnchor {
-            let size = objectAnchor.referenceObject.accessibilityFrame
-            let plane = SCNPlane(width: size.width, height: size.height)
-            plane.firstMaterial?.diffuse.contents = UIColor.white.withAlphaComponent(0.5)
-            //            plane.firstMaterial?.diffuse.contents = UIImage(named: "test")!.alpha(0.5)
-            plane.cornerRadius = 0.005
-            
-            let planeNode = SCNNode(geometry: plane)
-            planeNode.eulerAngles.x = -.pi / 2
-            //            planeNode.position = SCNVector3(0, 0, 20)
-            node.addChildNode(planeNode)
-            
-            var shapeNode: SCNNode?
-            //            switch imageAnchor.referenceImage.name {
-            //            case CardType.kingBlack.rawValue:
-            //                shapeNode = pentagonBlueNode
-            //            case CardType.kingRed.rawValue:
-            //                shapeNode = pentagonRedNode
-            //            default:
-            //                break
-            //            }
+        if let imageAnchor = anchor as? ARImageAnchor {
+//            let size = imageAnchor.referenceImage.physicalSize
+//            let plane = SCNPlane(width: size.width, height: size.height)
+//            plane.firstMaterial?.diffuse.contents = UIColor.white.withAlphaComponent(0.5)
+//            plane.firstMaterial?.diffuse.contents = UIImage(named: "test")!.alpha(0.5)
+//            plane.cornerRadius = 0.005
+//
+//            let planeNode = SCNNode(geometry: plane)
+//            planeNode.eulerAngles.x = -.pi / 2
+//            planeNode.position = SCNVector3(0, 0, 20)
+//            node.addChildNode(planeNode)
             
             print("---------------")
-            print(node.worldPosition)
-            print(objectAnchor.referenceObject.name)
-            shapeNode = pentagonBlueNode
+            print(imageAnchor.referenceImage.name)
             
-            let shapeSpin = SCNAction.rotateBy(x: 0, y: 2 * .pi, z: 0, duration: 10)
-            let repeatSpin = SCNAction.repeatForever(shapeSpin)
-            shapeNode?.runAction(repeatSpin)
-            
-            guard let shape = shapeNode else {
-                return
+            referenceImageName = imageAnchor.referenceImage.name!
+            switch imageAnchor.referenceImage.name {
+            case "coil":
+                let size = imageAnchor.referenceImage.physicalSize
+                let plane = SCNPlane(width: size.width, height: size.height)
+                plane.firstMaterial?.diffuse.contents = UIColor.white.withAlphaComponent(0.5)
+                plane.cornerRadius = 0.005
+                let planeNode = SCNNode(geometry: plane)
+                planeNode.eulerAngles.x = -.pi / 2
+                node.name = "coil"
+                node.addChildNode(planeNode)
+                
+                nodesArray.append(node)
+                
+            default:
+                var shapeNode: SCNNode?
+                shapeNode = pentagonRedNode
+                
+                let shapeSpin = SCNAction.rotateBy(x: 0, y: 2 * .pi, z: 0, duration: 10)
+                let repeatSpin = SCNAction.repeatForever(shapeSpin)
+                shapeNode?.runAction(repeatSpin)
+                
+                guard let shape = shapeNode else {
+                    return
+                }
+                node.name = "mob"
+                node.addChildNode(shape)
+                
+                if !nodesArray.isEmpty {
+                    if nodesArray.count == 2 {
+                        nodesArray[1] = node
+                    } else {
+                        nodesArray.append(node)
+                    }
+                } else {
+                    resetSceneView()
+                }
             }
-            node.addChildNode(shape)
-            imageNodes.append(node)
-            
         }
+    }
+    
+    func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
+        if let imageAnchor = anchor as? ARImageAnchor {
+            print("---------------")
+            print(imageAnchor.referenceImage.name)
+            
+            switch imageAnchor.referenceImage.name {
+            case "coil":
+                break
+            default:
+                if referenceImageName != imageAnchor.referenceImage.name {
+                    referenceImageName = imageAnchor.referenceImage.name!
+                    nodesArray.removeLast()
+                    
+                    var shapeNode: SCNNode?
+                    shapeNode = pentagonRedNode
+                    
+                    let shapeSpin = SCNAction.rotateBy(x: 0, y: 2 * .pi, z: 0, duration: 10)
+                    let repeatSpin = SCNAction.repeatForever(shapeSpin)
+                    shapeNode?.runAction(repeatSpin)
+                    
+                    guard let shape = shapeNode else {
+                        return
+                    }
+                    node.name = "mob"
+                    node.addChildNode(shape)
+                    
+                    if !nodesArray.isEmpty {
+                        if nodesArray.count == 2 {
+                            nodesArray[1] = node
+                        } else {
+                            nodesArray.append(node)
+                        }
+                    } else {
+                        resetSceneView()
+                    }
+                }
+            }
+        }
+        
     }
     
     func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
-        if imageNodes.count == 2 {
-            let positionOne = SCNVector3ToGLKVector3(imageNodes[0].position)
-            let positionTwo = SCNVector3ToGLKVector3(imageNodes[1].position)
-            let distance = GLKVector3Distance(positionOne, positionTwo)
-            print(distance)
-            print(imageNodes[1].eulerAngles)
+        if nodesArray.count == 2 {
+            let positionOne = SCNVector3ToGLKVector3(nodesArray[0].position)
+            let positionTwo = SCNVector3ToGLKVector3(nodesArray[1].position)
+            var distance = GLKVector3Distance(positionOne, positionTwo)
+
+            if nodesArray[1].position.x < 0 {
+                distance *= -1.0
+            }
             
-            //            if distance < 0.15 {
-            //                spinJump(node: imageNodes[0])
-            //                spinJump(node: imageNodes[1])
-            //                isJunping = true
-            //            } else {
-            //                isJunping = false
-            //            }
+//            print("----------------------------------")
+//            print(distance)
+//            print("----------------------------------")
+            
+            changeNode(distance: distance)
         }
     }
     
-    func spinJump(node: SCNNode) {
+    private func spinJump(node: SCNNode) {
         if isJunping { return }
         
         let shapeNode = node.childNodes[1]
@@ -246,5 +249,93 @@ extension ObjectDistanceViewController: ARSCNViewDelegate {
         
         shapeNode.runAction(shapeSpin)
         shapeNode.runAction(upDown)
+    }
+    
+    private func resetSceneView() {
+        sceneView.session.pause()
+        sceneView.scene.rootNode.enumerateChildNodes { (node, _) in
+            node.removeFromParentNode()
+        }
+        nodesArray = []
+        distanceStatus = .zero
+        
+        sceneView.session.run(imageConfiguration, options: [.removeExistingAnchors, .resetTracking])
+    }
+    
+    private func changeNode(distance: Float) {
+        if distance < 0.12 && distance > 0.06 && distanceStatus != .five {
+            setNode(status: .five)
+        } else if distance < 0.06 && distance > 0.025 && distanceStatus != .four {
+            setNode(status: .four)
+        } else if distance < 0.025 && distance > -0.025 && distanceStatus != .three {
+            setNode(status: .three)
+        } else if distance < -0.025 && distance > -0.06 && distanceStatus != .two {
+            setNode(status: .two)
+        } else if distance < -0.06 && distance > -0.12 && distanceStatus != .one {
+            setNode(status: .one)
+        } else if (distance > 0.12 || distance < -0.12) && distanceStatus != .zero {
+            setNode(status: .zero)
+        }
+    }
+    
+    private func setNode(status: DistanceStatus) {
+        nodesArray[1].childNodes.first!.removeFromParentNode()
+        
+        var shapeNode: SCNNode?
+        
+        let shapeSpin = SCNAction.rotateBy(x: 0, y: 2 * .pi, z: 0, duration: 10)
+        let repeatSpin = SCNAction.repeatForever(shapeSpin)
+        shapeNode?.runAction(repeatSpin)
+        
+        switch status {
+        case .zero:
+            shapeNode = pentagonRedNode
+            guard let shape = shapeNode else {
+                return
+            }
+            nodesArray[1].addChildNode(shape)
+            distanceStatus = .zero
+            
+        case .one:
+            shapeNode = pentagonGreenNode
+            guard let shape = shapeNode else {
+                return
+            }
+            nodesArray[1].addChildNode(shape)
+            distanceStatus = .one
+            
+        case .two:
+            shapeNode = pentagonBlueNode
+            guard let shape = shapeNode else {
+                return
+            }
+            nodesArray[1].addChildNode(shape)
+            distanceStatus = .two
+            
+        case .three:
+            shapeNode = pentagonPurpleNode
+            guard let shape = shapeNode else {
+                return
+            }
+            nodesArray[1].addChildNode(shape)
+            distanceStatus = .three
+            
+        case .four:
+            shapeNode = pentagonYellowNode
+            guard let shape = shapeNode else {
+                return
+            }
+            nodesArray[1].addChildNode(shape)
+            distanceStatus = .four
+            
+        case .five:
+            shapeNode = pentagonBlackNode
+            guard let shape = shapeNode else {
+                return
+            }
+            nodesArray[1].addChildNode(shape)
+            distanceStatus = .five
+            
+        }
     }
 }
