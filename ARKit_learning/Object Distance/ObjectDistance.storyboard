@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="b1U-6c-ASk">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Object Distance View Controller-->
+        <scene sceneID="M9P-nV-Dic">
+            <objects>
+                <viewController id="b1U-6c-ASk" customClass="ObjectDistanceViewController" customModule="ARKit_learning" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="j4M-LF-gUf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j5x-TV-iPb">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </arscnView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="j5x-TV-iPb" firstAttribute="top" secondItem="vZJ-AE-vaz" secondAttribute="top" id="4pN-uh-bxk"/>
+                            <constraint firstItem="j5x-TV-iPb" firstAttribute="leading" secondItem="vZJ-AE-vaz" secondAttribute="leading" id="C1y-Qp-oit"/>
+                            <constraint firstItem="vZJ-AE-vaz" firstAttribute="trailing" secondItem="j5x-TV-iPb" secondAttribute="trailing" id="ktO-g5-j3Q"/>
+                            <constraint firstItem="vZJ-AE-vaz" firstAttribute="bottom" secondItem="j5x-TV-iPb" secondAttribute="bottom" id="p2i-gH-iI0"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="vZJ-AE-vaz"/>
+                    </view>
+                    <connections>
+                        <outlet property="sceneView" destination="j5x-TV-iPb" id="ZMq-V8-viX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i6b-Zp-dBR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-892" y="130"/>
+        </scene>
+    </scenes>
+</document>

@@ -1,0 +1,26 @@
+{
+  "info" : {
+    "version" : 1,
+    "author" : "xcode"
+  },
+  "resources" : [
+    {
+      "filename" : "coil_9.arreferenceimage"
+    },
+    {
+      "filename" : "king_red.arreferenceimage"
+    },
+    {
+      "filename" : "ninebot_29.arreferenceimage"
+    },
+    {
+      "filename" : "ninebot_33.arreferenceimage"
+    },
+    {
+      "filename" : "ninebot_40.arreferenceimage"
+    },
+    {
+      "filename" : "ninebot_55.arreferenceimage"
+    }
+  ]
+}
