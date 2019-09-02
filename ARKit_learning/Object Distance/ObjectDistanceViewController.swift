@@ -33,12 +33,22 @@ final class ObjectDistanceViewController: UIViewController {
     }
     private var distanceStatus: DistanceStatus = .zero
     
-    private let imageConfiguration: ARImageTrackingConfiguration = {
-        let conf = ARImageTrackingConfiguration()
+//    private let imageConfiguration: ARImageTrackingConfiguration = {
+//        let conf = ARImageTrackingConfiguration()
+//        
+//        let images = ARReferenceImage.referenceImages(inGroupNamed: "AR Tranp", bundle: nil)
+//        conf.trackingImages = images!
+//        conf.maximumNumberOfTrackedImages = 1
+//        return conf
+//    }()
+    private let configuration: ARWorldTrackingConfiguration = {
+        let conf = ARWorldTrackingConfiguration()
+        conf.environmentTexturing = .automatic
         
         let images = ARReferenceImage.referenceImages(inGroupNamed: "AR Tranp", bundle: nil)
-        conf.trackingImages = images!
+        conf.detectionImages = images!
         conf.maximumNumberOfTrackedImages = 1
+        
         return conf
     }()
     
@@ -70,7 +80,7 @@ final class ObjectDistanceViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        sceneView.session.run(imageConfiguration)
+        sceneView.session.run(configuration)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -81,37 +91,6 @@ final class ObjectDistanceViewController: UIViewController {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         resetSceneView()
-//        let ship = SCNScene(named: "art.scnassets/ship.scn")!
-//        let shipNode = ship.rootNode.childNodes.first!
-//        shipNode.scale = SCNVector3(0.1, 0.1, 0.1)
-//
-//        //        guard let location = touches.first?.location(in: sceneView) else {
-//        //            return
-//        //        }
-//        //        let screenPosition: SCNVector3 = SCNVector3(location.x, location.y, 0.996)
-//        //        let worldPosition = sceneView.unprojectPoint(screenPosition)
-//
-//        let infrontCamera = SCNVector3Make(0, 0, -0.3)
-//
-//        guard let cameraNode = sceneView.pointOfView else {
-//            return
-//        }
-//        let pointInWorld = cameraNode.convertPosition(infrontCamera, to: nil)
-//        var screenPosition = sceneView.projectPoint(pointInWorld)
-//
-//        guard let location = touches.first?.location(in: sceneView) else {
-//            return
-//        }
-//
-////        screenPosition.x = Float(location.x)
-////        screenPosition.y = Float(location.y)
-//
-////        let worldPosition = sceneView.unprojectPoint(screenPosition)
-//
-////        shipNode.eulerAngles = cameraNode.eulerAngles
-//
-//        shipNode.position = SCNVector3Make(0, 0, 0)
-//        sceneView.scene.rootNode.addChildNode(shipNode)
     }
 }
 
@@ -133,6 +112,49 @@ extension ObjectDistanceViewController: ARSCNViewDelegate {
             
             print("---------------")
             print(imageAnchor.referenceImage.name)
+            print("Anchor ID = \(imageAnchor.identifier)")
+            print(imageAnchor.transform.columns)
+            
+//            let nodeHolder = SCNNode()
+//            let nodeGeometry = SCNBox(width: 0.02, height: 0.02, length: 0.02, chamferRadius: 0)
+//            nodeGeometry.firstMaterial?.diffuse.contents = UIColor.cyan
+//            nodeHolder.geometry = nodeGeometry
+//            let pos = SCNVector3(imageAnchor.transform.columns.3.x,
+//                                imageAnchor.transform.columns.3.y,
+//                                imageAnchor.transform.columns.3.z)
+//            nodeHolder.position = pos
+//            sceneView?.scene.rootNode.addChildNode(nodeHolder)
+//
+//            let nodeHolder2 = SCNNode()
+//            let nodeGeometry2 = SCNBox(width: 0.02, height: 0.02, length: 0.02, chamferRadius: 0)
+//            nodeGeometry2.firstMaterial?.diffuse.contents = UIColor.red
+//            nodeHolder2.geometry = nodeGeometry2
+//            let pos2 = SCNVector3(imageAnchor.transform.columns.3.x - 0.01,
+//                                 imageAnchor.transform.columns.3.y,
+//                                 imageAnchor.transform.columns.3.z)
+//            nodeHolder2.position = pos2
+//            sceneView?.scene.rootNode.addChildNode(nodeHolder2)
+//
+//            let nodeHolder3 = SCNNode()
+//            let nodeGeometry3 = SCNBox(width: 0.02, height: 0.02, length: 0.02, chamferRadius: 0)
+//            nodeGeometry3.firstMaterial?.diffuse.contents = UIColor.yellow
+//            nodeHolder3.geometry = nodeGeometry3
+//            let pos3 = SCNVector3(imageAnchor.transform.columns.3.x,
+//                                 imageAnchor.transform.columns.3.y - 0.01,
+//                                 imageAnchor.transform.columns.3.z)
+//            nodeHolder3.position = pos3
+//            sceneView?.scene.rootNode.addChildNode(nodeHolder3)
+//
+//            let nodeHolder4 = SCNNode()
+//            let nodeGeometry4 = SCNBox(width: 0.02, height: 0.02, length: 0.02, chamferRadius: 0)
+//            nodeGeometry4.firstMaterial?.diffuse.contents = UIColor.blue
+//            nodeHolder4.geometry = nodeGeometry4
+//            let pos4 = SCNVector3(imageAnchor.transform.columns.3.x,
+//                                 imageAnchor.transform.columns.3.y,
+//                                 imageAnchor.transform.columns.3.z - 0.01)
+//            nodeHolder4.position = pos4
+//            sceneView?.scene.rootNode.addChildNode(nodeHolder4)
+            
             
             referenceImageName = imageAnchor.referenceImage.name!
             switch imageAnchor.referenceImage.name {
@@ -145,23 +167,23 @@ extension ObjectDistanceViewController: ARSCNViewDelegate {
                 planeNode.eulerAngles.x = -.pi / 2
                 node.name = "coil"
                 node.addChildNode(planeNode)
-                
+
                 nodesArray.append(node)
-                
+
             default:
                 var shapeNode: SCNNode?
                 shapeNode = pentagonRedNode
-                
+
                 let shapeSpin = SCNAction.rotateBy(x: 0, y: 2 * .pi, z: 0, duration: 10)
                 let repeatSpin = SCNAction.repeatForever(shapeSpin)
                 shapeNode?.runAction(repeatSpin)
-                
+
                 guard let shape = shapeNode else {
                     return
                 }
                 node.name = "mob"
                 node.addChildNode(shape)
-                
+
                 if !nodesArray.isEmpty {
                     if nodesArray.count == 2 {
                         nodesArray[1] = node
@@ -179,7 +201,7 @@ extension ObjectDistanceViewController: ARSCNViewDelegate {
         if let imageAnchor = anchor as? ARImageAnchor {
             print("---------------")
             print(imageAnchor.referenceImage.name)
-            
+
             switch imageAnchor.referenceImage.name {
             case "coil":
                 break
@@ -187,20 +209,20 @@ extension ObjectDistanceViewController: ARSCNViewDelegate {
                 if referenceImageName != imageAnchor.referenceImage.name {
                     referenceImageName = imageAnchor.referenceImage.name!
                     nodesArray.removeLast()
-                    
+
                     var shapeNode: SCNNode?
                     shapeNode = pentagonRedNode
-                    
+
                     let shapeSpin = SCNAction.rotateBy(x: 0, y: 2 * .pi, z: 0, duration: 10)
                     let repeatSpin = SCNAction.repeatForever(shapeSpin)
                     shapeNode?.runAction(repeatSpin)
-                    
+
                     guard let shape = shapeNode else {
                         return
                     }
                     node.name = "mob"
                     node.addChildNode(shape)
-                    
+
                     if !nodesArray.isEmpty {
                         if nodesArray.count == 2 {
                             nodesArray[1] = node
@@ -213,23 +235,25 @@ extension ObjectDistanceViewController: ARSCNViewDelegate {
                 }
             }
         }
-        
+
     }
-    
+
     func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
         if nodesArray.count == 2 {
             let positionOne = SCNVector3ToGLKVector3(nodesArray[0].position)
             let positionTwo = SCNVector3ToGLKVector3(nodesArray[1].position)
             var distance = GLKVector3Distance(positionOne, positionTwo)
 
-            if nodesArray[1].position.x < 0 {
+            if nodesArray[1].position.x - nodesArray[0].position.x < 0 {
                 distance *= -1.0
             }
-            
-//            print("----------------------------------")
-//            print(distance)
-//            print("----------------------------------")
-            
+
+            print("----------------------------------")
+//            print(nodesArray[0].position)
+//            print(nodesArray[1].position)
+            print(distance)
+            print("----------------------------------")
+
             changeNode(distance: distance)
         }
     }
@@ -259,7 +283,7 @@ extension ObjectDistanceViewController: ARSCNViewDelegate {
         nodesArray = []
         distanceStatus = .zero
         
-        sceneView.session.run(imageConfiguration, options: [.removeExistingAnchors, .resetTracking])
+        sceneView.session.run(configuration, options: [.removeExistingAnchors, .resetTracking])
     }
     
     private func changeNode(distance: Float) {
