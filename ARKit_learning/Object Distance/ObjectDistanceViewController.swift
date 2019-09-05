@@ -13,6 +13,8 @@ final class ObjectDistanceViewController: UIViewController {
     
     @IBOutlet private weak var sceneView: ARSCNView!
     
+    var coilSize = CGSize()
+    
     private var pentagonBlueNode: SCNNode?
     private var pentagonRedNode: SCNNode?
     private var pentagonYellowNode: SCNNode?
@@ -33,9 +35,9 @@ final class ObjectDistanceViewController: UIViewController {
     }
     private var distanceStatus: DistanceStatus = .zero
     
-//    private let imageConfiguration: ARImageTrackingConfiguration = {
+//    private let configuration: ARImageTrackingConfiguration = {
 //        let conf = ARImageTrackingConfiguration()
-//        
+//
 //        let images = ARReferenceImage.referenceImages(inGroupNamed: "AR Tranp", bundle: nil)
 //        conf.trackingImages = images!
 //        conf.maximumNumberOfTrackedImages = 1
@@ -44,11 +46,11 @@ final class ObjectDistanceViewController: UIViewController {
     private let configuration: ARWorldTrackingConfiguration = {
         let conf = ARWorldTrackingConfiguration()
         conf.environmentTexturing = .automatic
-        
+
         let images = ARReferenceImage.referenceImages(inGroupNamed: "AR Tranp", bundle: nil)
         conf.detectionImages = images!
         conf.maximumNumberOfTrackedImages = 1
-        
+
         return conf
     }()
     
@@ -81,6 +83,40 @@ final class ObjectDistanceViewController: UIViewController {
         super.viewWillAppear(animated)
         
         sceneView.session.run(configuration)
+        
+//        let nodeHolder = SCNNode()
+//        let nodeGeometry = SCNBox(width: 0.02, height: 0.02, length: 0.02, chamferRadius: 0)
+//        nodeGeometry.firstMaterial?.diffuse.contents = UIColor.cyan
+//        nodeHolder.geometry = nodeGeometry
+//        let pos = SCNVector3(0, 0, 0)
+//        nodeHolder.position = pos
+//        nodeHolder.name = "chinko"
+//        sceneView?.scene.rootNode.addChildNode(nodeHolder)
+//
+//        let nodeHolder2 = SCNNode()
+//        let nodeGeometry2 = SCNBox(width: 0.02, height: 0.02, length: 0.02, chamferRadius: 0)
+//        nodeGeometry2.firstMaterial?.diffuse.contents = UIColor.red
+//        nodeHolder2.geometry = nodeGeometry2
+//        let pos2 = SCNVector3(0 - 0.02, 0, 0)
+//        nodeHolder2.position = pos2
+//        sceneView?.scene.rootNode.addChildNode(nodeHolder2)
+//
+//
+//        let nodeHolder3 = SCNNode()
+//        let nodeGeometry3 = SCNBox(width: 0.02, height: 0.02, length: 0.02, chamferRadius: 0)
+//        nodeGeometry3.firstMaterial?.diffuse.contents = UIColor.yellow
+//        nodeHolder3.geometry = nodeGeometry3
+//        let pos3 = SCNVector3(0, 0 - 0.02, 0)
+//        nodeHolder3.position = pos3
+//        sceneView?.scene.rootNode.addChildNode(nodeHolder3)
+//
+//        let nodeHolder4 = SCNNode()
+//        let nodeGeometry4 = SCNBox(width: 0.02, height: 0.02, length: 0.02, chamferRadius: 0)
+//        nodeGeometry4.firstMaterial?.diffuse.contents = UIColor.blue
+//        nodeHolder4.geometry = nodeGeometry4
+//        let pos4 = SCNVector3(0, 0, 0 - 0.02)
+//        nodeHolder4.position = pos4
+//        sceneView?.scene.rootNode.addChildNode(nodeHolder4)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -90,6 +126,8 @@ final class ObjectDistanceViewController: UIViewController {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        print(sceneView.scene.rootNode.childNodes)
+//        sceneView.scene.rootNode.childNodes.filter({$0.name == "chinko"}).first?.removeFromParentNode()
         resetSceneView()
     }
 }
@@ -112,8 +150,8 @@ extension ObjectDistanceViewController: ARSCNViewDelegate {
             
             print("---------------")
             print(imageAnchor.referenceImage.name)
-            print("Anchor ID = \(imageAnchor.identifier)")
-            print(imageAnchor.transform.columns)
+//            print("Anchor ID = \(imageAnchor.identifier)")
+//            print(imageAnchor.transform.columns)
             
 //            let nodeHolder = SCNNode()
 //            let nodeGeometry = SCNBox(width: 0.02, height: 0.02, length: 0.02, chamferRadius: 0)
@@ -135,6 +173,7 @@ extension ObjectDistanceViewController: ARSCNViewDelegate {
 //            nodeHolder2.position = pos2
 //            sceneView?.scene.rootNode.addChildNode(nodeHolder2)
 //
+//
 //            let nodeHolder3 = SCNNode()
 //            let nodeGeometry3 = SCNBox(width: 0.02, height: 0.02, length: 0.02, chamferRadius: 0)
 //            nodeGeometry3.firstMaterial?.diffuse.contents = UIColor.yellow
@@ -155,10 +194,9 @@ extension ObjectDistanceViewController: ARSCNViewDelegate {
 //            nodeHolder4.position = pos4
 //            sceneView?.scene.rootNode.addChildNode(nodeHolder4)
             
-            
             referenceImageName = imageAnchor.referenceImage.name!
-            switch imageAnchor.referenceImage.name {
-            case "coil":
+            if (imageAnchor.referenceImage.name?.contains("coil"))! && nodesArray.isEmpty {
+                coilSize = imageAnchor.referenceImage.physicalSize
                 let size = imageAnchor.referenceImage.physicalSize
                 let plane = SCNPlane(width: size.width, height: size.height)
                 plane.firstMaterial?.diffuse.contents = UIColor.white.withAlphaComponent(0.5)
@@ -167,23 +205,33 @@ extension ObjectDistanceViewController: ARSCNViewDelegate {
                 planeNode.eulerAngles.x = -.pi / 2
                 node.name = "coil"
                 node.addChildNode(planeNode)
-
+                
                 nodesArray.append(node)
-
-            default:
+            } else if (imageAnchor.referenceImage.name?.contains("king"))! {
                 var shapeNode: SCNNode?
                 shapeNode = pentagonRedNode
-
+                
                 let shapeSpin = SCNAction.rotateBy(x: 0, y: 2 * .pi, z: 0, duration: 10)
                 let repeatSpin = SCNAction.repeatForever(shapeSpin)
                 shapeNode?.runAction(repeatSpin)
-
+                
                 guard let shape = shapeNode else {
                     return
                 }
-                node.name = "mob"
-                node.addChildNode(shape)
-
+                
+                if !nodesArray.isEmpty {
+                    print(nodesArray[0])
+                    let plane = SCNPlane(width: coilSize.width, height: coilSize.height)
+                    plane.firstMaterial?.diffuse.contents = UIColor.white.withAlphaComponent(0.5)
+//                    plane.firstMaterial?.diffuse.contents = UIImage(named: "dan2")!.alpha(0.3)
+                    plane.cornerRadius = 0.005
+                    
+                    let planeNode = SCNNode(geometry: plane)
+                    planeNode.eulerAngles.x = -.pi * 2
+//                    planeNode.position = SCNVector3(0, 0, 15)
+                    nodesArray[0].addChildNode(planeNode)
+                }
+                
                 if !nodesArray.isEmpty {
                     if nodesArray.count == 2 {
                         nodesArray[1] = node
@@ -197,51 +245,66 @@ extension ObjectDistanceViewController: ARSCNViewDelegate {
         }
     }
     
-    func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
-        if let imageAnchor = anchor as? ARImageAnchor {
-            print("---------------")
-            print(imageAnchor.referenceImage.name)
-
-            switch imageAnchor.referenceImage.name {
-            case "coil":
-                break
-            default:
-                if referenceImageName != imageAnchor.referenceImage.name {
-                    referenceImageName = imageAnchor.referenceImage.name!
-                    nodesArray.removeLast()
-
-                    var shapeNode: SCNNode?
-                    shapeNode = pentagonRedNode
-
-                    let shapeSpin = SCNAction.rotateBy(x: 0, y: 2 * .pi, z: 0, duration: 10)
-                    let repeatSpin = SCNAction.repeatForever(shapeSpin)
-                    shapeNode?.runAction(repeatSpin)
-
-                    guard let shape = shapeNode else {
-                        return
-                    }
-                    node.name = "mob"
-                    node.addChildNode(shape)
-
-                    if !nodesArray.isEmpty {
-                        if nodesArray.count == 2 {
-                            nodesArray[1] = node
-                        } else {
-                            nodesArray.append(node)
-                        }
-                    } else {
-                        resetSceneView()
-                    }
-                }
-            }
-        }
-
-    }
+//    func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
+//        if let imageAnchor = anchor as? ARImageAnchor {
+////            print("---------------")
+////            print(imageAnchor.referenceImage.name)
+//
+//            if (imageAnchor.referenceImage.name?.contains("ninebot"))! {
+//                referenceImageName = imageAnchor.referenceImage.name!
+//                if nodesArray.count == 2 {
+//                    nodesArray.removeLast()
+//                }
+//
+//                var shapeNode: SCNNode?
+//                shapeNode = pentagonRedNode
+//
+//                let shapeSpin = SCNAction.rotateBy(x: 0, y: 2 * .pi, z: 0, duration: 10)
+//                let repeatSpin = SCNAction.repeatForever(shapeSpin)
+//                shapeNode?.runAction(repeatSpin)
+//
+//                guard let shape = shapeNode else {
+//                    return
+//                }
+//                node.name = "mob"
+//                if !nodesArray.isEmpty {
+//                    let plane = SCNPlane(width: coilSize.width, height: coilSize.height)
+////                    plane.firstMaterial?.diffuse.contents = UIColor.white.withAlphaComponent(0.5)
+//                    plane.firstMaterial?.diffuse.contents = UIImage(named: "dan2")!.alpha(0.3)
+//                    plane.cornerRadius = 0.005
+//
+//                    let planeNode = SCNNode(geometry: plane)
+//                    planeNode.eulerAngles.x = -.pi / 2
+////                    planeNode.position = SCNVector3(0, 0, 0)
+//                    nodesArray[0].addChildNode(planeNode)
+//
+////                    nodesArray[0].addChildNode(shape)
+//                }
+//
+//                if !nodesArray.isEmpty {
+//                    if nodesArray.count == 2 {
+//                        nodesArray[1] = node
+//                    } else {
+//                        nodesArray.append(node)
+//                    }
+//                } else {
+//                    resetSceneView()
+//                }
+//            }
+//        }
+//    }
 
     func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
         if nodesArray.count == 2 {
-            let positionOne = SCNVector3ToGLKVector3(nodesArray[0].position)
-            let positionTwo = SCNVector3ToGLKVector3(nodesArray[1].position)
+            var node0Pos = nodesArray[0].position
+            var node1Pos = nodesArray[1].position
+            
+            node0Pos.y = 0
+            node0Pos.z = 0
+            node1Pos.y = 0
+            node1Pos.z = 0
+            let positionOne = SCNVector3ToGLKVector3(node0Pos)
+            let positionTwo = SCNVector3ToGLKVector3(node1Pos)
             var distance = GLKVector3Distance(positionOne, positionTwo)
 
             if nodesArray[1].position.x - nodesArray[0].position.x < 0 {
@@ -251,10 +314,13 @@ extension ObjectDistanceViewController: ARSCNViewDelegate {
             print("----------------------------------")
 //            print(nodesArray[0].position)
 //            print(nodesArray[1].position)
+            print(nodesArray[0].childNodes)
+            print(node0Pos)
+            print(node1Pos)
             print(distance)
             print("----------------------------------")
 
-            changeNode(distance: distance)
+//            changeNode(distance: distance)
         }
     }
     
@@ -287,23 +353,32 @@ extension ObjectDistanceViewController: ARSCNViewDelegate {
     }
     
     private func changeNode(distance: Float) {
-        if distance < 0.12 && distance > 0.06 && distanceStatus != .five {
+        if distance < 0.6 && distance > 0.4 && distanceStatus != .five {
             setNode(status: .five)
-        } else if distance < 0.06 && distance > 0.025 && distanceStatus != .four {
+        } else if distance < 0.4 && distance > 0.25 && distanceStatus != .four {
             setNode(status: .four)
-        } else if distance < 0.025 && distance > -0.025 && distanceStatus != .three {
+        } else if distance < 0.25 && distance > -0.25 && distanceStatus != .three {
             setNode(status: .three)
-        } else if distance < -0.025 && distance > -0.06 && distanceStatus != .two {
+        } else if distance < -0.25 && distance > -0.4 && distanceStatus != .two {
             setNode(status: .two)
-        } else if distance < -0.06 && distance > -0.12 && distanceStatus != .one {
+        } else if distance < -0.4 && distance > -0.6 && distanceStatus != .one {
             setNode(status: .one)
-        } else if (distance > 0.12 || distance < -0.12) && distanceStatus != .zero {
+        } else if (distance > 0.6 || distance < -0.6) && distanceStatus != .zero {
             setNode(status: .zero)
         }
     }
     
     private func setNode(status: DistanceStatus) {
-        nodesArray[1].childNodes.first!.removeFromParentNode()
+        if nodesArray.count != 2 {
+            return
+        }
+        for node in nodesArray[0].childNodes {
+            if let name = node.name {
+                if name.contains("pentagonal") {
+                    node.removeFromParentNode()
+                }
+            }
+        }
         
         var shapeNode: SCNNode?
         
@@ -317,7 +392,7 @@ extension ObjectDistanceViewController: ARSCNViewDelegate {
             guard let shape = shapeNode else {
                 return
             }
-            nodesArray[1].addChildNode(shape)
+            nodesArray[0].addChildNode(shape)
             distanceStatus = .zero
             
         case .one:
@@ -325,7 +400,7 @@ extension ObjectDistanceViewController: ARSCNViewDelegate {
             guard let shape = shapeNode else {
                 return
             }
-            nodesArray[1].addChildNode(shape)
+            nodesArray[0].addChildNode(shape)
             distanceStatus = .one
             
         case .two:
@@ -333,7 +408,7 @@ extension ObjectDistanceViewController: ARSCNViewDelegate {
             guard let shape = shapeNode else {
                 return
             }
-            nodesArray[1].addChildNode(shape)
+            nodesArray[0].addChildNode(shape)
             distanceStatus = .two
             
         case .three:
@@ -341,7 +416,7 @@ extension ObjectDistanceViewController: ARSCNViewDelegate {
             guard let shape = shapeNode else {
                 return
             }
-            nodesArray[1].addChildNode(shape)
+            nodesArray[0].addChildNode(shape)
             distanceStatus = .three
             
         case .four:
@@ -349,7 +424,7 @@ extension ObjectDistanceViewController: ARSCNViewDelegate {
             guard let shape = shapeNode else {
                 return
             }
-            nodesArray[1].addChildNode(shape)
+            nodesArray[0].addChildNode(shape)
             distanceStatus = .four
             
         case .five:
@@ -357,7 +432,7 @@ extension ObjectDistanceViewController: ARSCNViewDelegate {
             guard let shape = shapeNode else {
                 return
             }
-            nodesArray[1].addChildNode(shape)
+            nodesArray[0].addChildNode(shape)
             distanceStatus = .five
             
         }

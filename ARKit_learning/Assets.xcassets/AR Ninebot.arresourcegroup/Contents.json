@@ -5,7 +5,28 @@
   },
   "resources" : [
     {
-      "filename" : "coil_9.arreferenceimage"
+      "filename" : "coil_10.arreferenceimage"
+    },
+    {
+      "filename" : "coil_11.arreferenceimage"
+    },
+    {
+      "filename" : "coil_12.arreferenceimage"
+    },
+    {
+      "filename" : "coil_13.arreferenceimage"
+    },
+    {
+      "filename" : "coil_14.arreferenceimage"
+    },
+    {
+      "filename" : "coil_15.arreferenceimage"
+    },
+    {
+      "filename" : "coil_16.arreferenceimage"
+    },
+    {
+      "filename" : "coil.arreferenceimage"
     },
     {
       "filename" : "ninebot_29.arreferenceimage"
@@ -14,10 +35,73 @@
       "filename" : "ninebot_33.arreferenceimage"
     },
     {
+      "filename" : "ninebot_34.arreferenceimage"
+    },
+    {
+      "filename" : "ninebot_35.arreferenceimage"
+    },
+    {
+      "filename" : "ninebot_36.arreferenceimage"
+    },
+    {
+      "filename" : "ninebot_37.arreferenceimage"
+    },
+    {
+      "filename" : "ninebot_38.arreferenceimage"
+    },
+    {
+      "filename" : "ninebot_39.arreferenceimage"
+    },
+    {
       "filename" : "ninebot_40.arreferenceimage"
     },
     {
+      "filename" : "ninebot_41.arreferenceimage"
+    },
+    {
+      "filename" : "ninebot_42.arreferenceimage"
+    },
+    {
+      "filename" : "ninebot_43.arreferenceimage"
+    },
+    {
+      "filename" : "ninebot_44.arreferenceimage"
+    },
+    {
+      "filename" : "ninebot_45.arreferenceimage"
+    },
+    {
+      "filename" : "ninebot_46.arreferenceimage"
+    },
+    {
+      "filename" : "ninebot_47.arreferenceimage"
+    },
+    {
+      "filename" : "ninebot_48.arreferenceimage"
+    },
+    {
+      "filename" : "ninebot_49.arreferenceimage"
+    },
+    {
+      "filename" : "ninebot_50.arreferenceimage"
+    },
+    {
+      "filename" : "ninebot_51.arreferenceimage"
+    },
+    {
+      "filename" : "ninebot_52.arreferenceimage"
+    },
+    {
+      "filename" : "ninebot_53.arreferenceimage"
+    },
+    {
+      "filename" : "ninebot_54.arreferenceimage"
+    },
+    {
       "filename" : "ninebot_55.arreferenceimage"
+    },
+    {
+      "filename" : "ninebot_56.arreferenceimage"
     }
   ]
 }

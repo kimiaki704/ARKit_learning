@@ -1,0 +1,29 @@
+{
+  "info" : {
+    "version" : 1,
+    "author" : "xcode"
+  },
+  "resources" : [
+    {
+      "filename" : "car_20.arreferenceimage"
+    },
+    {
+      "filename" : "car_21.arreferenceimage"
+    },
+    {
+      "filename" : "rail_10.arreferenceimage"
+    },
+    {
+      "filename" : "rail_12.arreferenceimage"
+    },
+    {
+      "filename" : "rail_13.arreferenceimage"
+    },
+    {
+      "filename" : "rail_14.arreferenceimage"
+    },
+    {
+      "filename" : "rail_15.arreferenceimage"
+    }
+  ]
+}

@@ -5,6 +5,12 @@
   },
   "resources" : [
     {
+      "filename" : "coil_1.arreferenceimage"
+    },
+    {
+      "filename" : "coil_2.arreferenceimage"
+    },
+    {
       "filename" : "coil.arreferenceimage"
     },
     {
