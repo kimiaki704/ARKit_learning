@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		04388467231E4D10004B0CE2 /* ObjectDistance2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04388466231E4D10004B0CE2 /* ObjectDistance2ViewController.swift */; };
+		045BD90C23782500003CC8FD /* BLESerial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 045BD90B23782500003CC8FD /* BLESerial.storyboard */; };
+		045BD90E23782511003CC8FD /* BLESerialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045BD90D23782511003CC8FD /* BLESerialViewController.swift */; };
 		0461268D2268559E002AB0ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0461268C2268559E002AB0ED /* AppDelegate.swift */; };
 		0461268F2268559E002AB0ED /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 0461268E2268559E002AB0ED /* art.scnassets */; };
 		046126912268559E002AB0ED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046126902268559E002AB0ED /* ViewController.swift */; };
@@ -51,6 +53,8 @@
 
 /* Begin PBXFileReference section */
 		04388466231E4D10004B0CE2 /* ObjectDistance2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectDistance2ViewController.swift; sourceTree = "<group>"; };
+		045BD90B23782500003CC8FD /* BLESerial.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BLESerial.storyboard; sourceTree = "<group>"; };
+		045BD90D23782511003CC8FD /* BLESerialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLESerialViewController.swift; sourceTree = "<group>"; };
 		046126892268559E002AB0ED /* ARKit_learning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARKit_learning.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0461268C2268559E002AB0ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0461268E2268559E002AB0ED /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -106,6 +110,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		045BD90A237824CF003CC8FD /* BLE Serial */ = {
+			isa = PBXGroup;
+			children = (
+				045BD90B23782500003CC8FD /* BLESerial.storyboard */,
+				045BD90D23782511003CC8FD /* BLESerialViewController.swift */,
+			);
+			path = "BLE Serial";
+			sourceTree = "<group>";
+		};
 		046126802268559E002AB0ED = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +142,7 @@
 		0461268B2268559E002AB0ED /* ARKit_learning */ = {
 			isa = PBXGroup;
 			children = (
+				045BD90A237824CF003CC8FD /* BLE Serial */,
 				04C39E3423124C1C0027979B /* Object Distance */,
 				04C39E2F23124B9A0027979B /* Extension */,
 				046126D122688561002AB0ED /* Card */,
@@ -343,6 +357,7 @@
 				046126BE22685616002AB0ED /* SetShip.storyboard in Resources */,
 				046126942268559E002AB0ED /* Main.storyboard in Resources */,
 				046126D322688579002AB0ED /* Card.storyboard in Resources */,
+				045BD90C23782500003CC8FD /* BLESerial.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,6 +391,7 @@
 				04C39E3123124BD20027979B /* UIImage+Common.swift in Sources */,
 				04C39E3323124C150027979B /* ObjectDistanceViewController.swift in Sources */,
 				046126CB22686A2F002AB0ED /* TextSaveOnPlaneViewController.swift in Sources */,
+				045BD90E23782511003CC8FD /* BLESerialViewController.swift in Sources */,
 				046126C022685624002AB0ED /* SetShipViewController.swift in Sources */,
 				0461268D2268559E002AB0ED /* AppDelegate.swift in Sources */,
 			);
