@@ -122,10 +122,26 @@ class BLESerialViewController: UIViewController, CBCentralManagerDelegate, CBPer
         self.peripheral.discoverCharacteristics(characteristics, for: service)
     }
     
+    // MARK: - Get Value
+    func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
+        let data: Data = characteristic.value!
+        let hexStr = data.map { String(format: "%02hhx ", $0) }.joined()
+        print(hexStr)
+    }
+    
+    func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor descriptor: CBDescriptor, error: Error?) {
+        if let error = error {
+            print("Failed... error: \(error)")
+            return
+        }
+        
+        print("Succeeded! service uuid: \(characteristic.service.uuid), characteristic uuid: \(characteristic.uuid), value: \(characteristic.value)")
+    }
+    
     // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        addChild(navigationController!)
         // centralManagerを初期化する
         self.centralManager = CBCentralManager(delegate: self, queue: nil)
     }
@@ -133,4 +149,5 @@ class BLESerialViewController: UIViewController, CBCentralManagerDelegate, CBPer
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		043205AD23C7E9B900B6BF4C /* BLESerialViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043205AC23C7E9B900B6BF4C /* BLESerialViewController2.swift */; };
 		04388467231E4D10004B0CE2 /* ObjectDistance2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04388466231E4D10004B0CE2 /* ObjectDistance2ViewController.swift */; };
 		045BD90C23782500003CC8FD /* BLESerial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 045BD90B23782500003CC8FD /* BLESerial.storyboard */; };
 		045BD90E23782511003CC8FD /* BLESerialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045BD90D23782511003CC8FD /* BLESerialViewController.swift */; };
@@ -52,6 +53,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		043205AC23C7E9B900B6BF4C /* BLESerialViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLESerialViewController2.swift; sourceTree = "<group>"; };
 		04388466231E4D10004B0CE2 /* ObjectDistance2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectDistance2ViewController.swift; sourceTree = "<group>"; };
 		045BD90B23782500003CC8FD /* BLESerial.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BLESerial.storyboard; sourceTree = "<group>"; };
 		045BD90D23782511003CC8FD /* BLESerialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLESerialViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 			children = (
 				045BD90B23782500003CC8FD /* BLESerial.storyboard */,
 				045BD90D23782511003CC8FD /* BLESerialViewController.swift */,
+				043205AC23C7E9B900B6BF4C /* BLESerialViewController2.swift */,
 			);
 			path = "BLE Serial";
 			sourceTree = "<group>";
@@ -382,6 +385,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				043205AD23C7E9B900B6BF4C /* BLESerialViewController2.swift in Sources */,
 				04388467231E4D10004B0CE2 /* ObjectDistance2ViewController.swift in Sources */,
 				047178F5232191FA00E0CE22 /* ObjectDistance3ViewController.swift in Sources */,
 				046126C522686482002AB0ED /* DrawingViewController.swift in Sources */,

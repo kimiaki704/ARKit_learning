@@ -32,7 +32,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="connect"/>
                                 <connections>
-                                    <action selector="connectBtnTapped:" destination="f3J-gY-hFL" eventType="touchUpInside" id="ssF-xi-wqL"/>
+                                    <action selector="connectBtnTapped:" destination="f3J-gY-hFL" eventType="touchUpInside" id="VJf-sv-7Sd"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iLO-VM-Ff3">
@@ -40,7 +40,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="send_1"/>
                                 <connections>
-                                    <action selector="send1BtnTapped:" destination="f3J-gY-hFL" eventType="touchUpInside" id="rRd-e4-zD4"/>
+                                    <action selector="send1BtnTapped:" destination="f3J-gY-hFL" eventType="touchUpInside" id="ysE-G0-Un5"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aSB-i9-b2z">
@@ -48,7 +48,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="send_2"/>
                                 <connections>
-                                    <action selector="send2BtnTapped:" destination="f3J-gY-hFL" eventType="touchUpInside" id="zSG-Su-JkJ"/>
+                                    <action selector="send2BtnTapped:" destination="f3J-gY-hFL" eventType="touchUpInside" id="vvx-0T-z1b"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -61,7 +61,7 @@
                         <viewLayoutGuide key="safeArea" id="ibd-Sf-vcj"/>
                     </view>
                     <connections>
-                        <outlet property="SSIDUILabel" destination="qPw-U9-lnM" id="Nff-pD-War"/>
+                        <outlet property="SSIDUILabel" destination="qPw-U9-lnM" id="94n-Hx-MtV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GjQ-MP-Md0" userLabel="First Responder" sceneMemberID="firstResponder"/>
