@@ -29,6 +29,15 @@
 		046126D02268811B002AB0ED /* SetMirrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046126CF2268811B002AB0ED /* SetMirrorViewController.swift */; };
 		046126D322688579002AB0ED /* Card.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 046126D222688579002AB0ED /* Card.storyboard */; };
 		046126D52268858A002AB0ED /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046126D42268858A002AB0ED /* CardViewController.swift */; };
+		046CCBB923D45A1C004A342A /* DrawerMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 046CCBAE23D45A1B004A342A /* DrawerMenu.storyboard */; };
+		046CCBBA23D45A1C004A342A /* DrawerMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046CCBAF23D45A1B004A342A /* DrawerMenuViewController.swift */; };
+		046CCBBB23D45A1C004A342A /* DrawerApp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 046CCBB023D45A1B004A342A /* DrawerApp.storyboard */; };
+		046CCBBC23D45A1C004A342A /* DrawerMainSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046CCBB223D45A1B004A342A /* DrawerMainSampleViewController.swift */; };
+		046CCBBD23D45A1C004A342A /* DrawerMainSample.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 046CCBB323D45A1B004A342A /* DrawerMainSample.storyboard */; };
+		046CCBBE23D45A1C004A342A /* DrawerAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046CCBB423D45A1B004A342A /* DrawerAppViewController.swift */; };
+		046CCBBF23D45A1C004A342A /* DrawerNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046CCBB523D45A1B004A342A /* DrawerNavigationController.swift */; };
+		046CCBC023D45A1C004A342A /* DrawerOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046CCBB723D45A1B004A342A /* DrawerOption.swift */; };
+		046CCBC123D45A1C004A342A /* DrawerParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046CCBB823D45A1B004A342A /* DrawerParentViewController.swift */; };
 		047178F5232191FA00E0CE22 /* ObjectDistance3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047178F4232191FA00E0CE22 /* ObjectDistance3ViewController.swift */; };
 		04B41C9F23CF93AA00B19873 /* SCNBoxLoopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B41C9E23CF93AA00B19873 /* SCNBoxLoopViewController.swift */; };
 		04B41CA123CF948B00B19873 /* SCNBox.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04B41CA023CF948B00B19873 /* SCNBox.storyboard */; };
@@ -85,6 +94,15 @@
 		046126CF2268811B002AB0ED /* SetMirrorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetMirrorViewController.swift; sourceTree = "<group>"; };
 		046126D222688579002AB0ED /* Card.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Card.storyboard; sourceTree = "<group>"; };
 		046126D42268858A002AB0ED /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
+		046CCBAE23D45A1B004A342A /* DrawerMenu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DrawerMenu.storyboard; sourceTree = "<group>"; };
+		046CCBAF23D45A1B004A342A /* DrawerMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerMenuViewController.swift; sourceTree = "<group>"; };
+		046CCBB023D45A1B004A342A /* DrawerApp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DrawerApp.storyboard; sourceTree = "<group>"; };
+		046CCBB223D45A1B004A342A /* DrawerMainSampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerMainSampleViewController.swift; sourceTree = "<group>"; };
+		046CCBB323D45A1B004A342A /* DrawerMainSample.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DrawerMainSample.storyboard; sourceTree = "<group>"; };
+		046CCBB423D45A1B004A342A /* DrawerAppViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerAppViewController.swift; sourceTree = "<group>"; };
+		046CCBB523D45A1B004A342A /* DrawerNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerNavigationController.swift; sourceTree = "<group>"; };
+		046CCBB723D45A1B004A342A /* DrawerOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerOption.swift; sourceTree = "<group>"; };
+		046CCBB823D45A1B004A342A /* DrawerParentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerParentViewController.swift; sourceTree = "<group>"; };
 		047178F4232191FA00E0CE22 /* ObjectDistance3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectDistance3ViewController.swift; sourceTree = "<group>"; };
 		04B41C9E23CF93AA00B19873 /* SCNBoxLoopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCNBoxLoopViewController.swift; sourceTree = "<group>"; };
 		04B41CA023CF948B00B19873 /* SCNBox.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SCNBox.storyboard; sourceTree = "<group>"; };
@@ -153,6 +171,7 @@
 		0461268B2268559E002AB0ED /* ARKit_learning */ = {
 			isa = PBXGroup;
 			children = (
+				046CCBAB23D45A1B004A342A /* Drawer */,
 				04B41CA223D3135000B19873 /* Common */,
 				04B41C9D23CF935C00B19873 /* SCNBox Loop */,
 				045BD90A237824CF003CC8FD /* BLE Serial */,
@@ -235,6 +254,55 @@
 				046126D42268858A002AB0ED /* CardViewController.swift */,
 			);
 			path = Card;
+			sourceTree = "<group>";
+		};
+		046CCBAB23D45A1B004A342A /* Drawer */ = {
+			isa = PBXGroup;
+			children = (
+				046CCBAC23D45A1B004A342A /* ViewController */,
+				046CCBB623D45A1B004A342A /* Drawer Component */,
+			);
+			name = Drawer;
+			path = "../../swift-training/Drawer";
+			sourceTree = "<group>";
+		};
+		046CCBAC23D45A1B004A342A /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				046CCBAD23D45A1B004A342A /* Menu Contents */,
+				046CCBB023D45A1B004A342A /* DrawerApp.storyboard */,
+				046CCBB123D45A1B004A342A /* Main Contents */,
+				046CCBB423D45A1B004A342A /* DrawerAppViewController.swift */,
+				046CCBB523D45A1B004A342A /* DrawerNavigationController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		046CCBAD23D45A1B004A342A /* Menu Contents */ = {
+			isa = PBXGroup;
+			children = (
+				046CCBAE23D45A1B004A342A /* DrawerMenu.storyboard */,
+				046CCBAF23D45A1B004A342A /* DrawerMenuViewController.swift */,
+			);
+			path = "Menu Contents";
+			sourceTree = "<group>";
+		};
+		046CCBB123D45A1B004A342A /* Main Contents */ = {
+			isa = PBXGroup;
+			children = (
+				046CCBB223D45A1B004A342A /* DrawerMainSampleViewController.swift */,
+				046CCBB323D45A1B004A342A /* DrawerMainSample.storyboard */,
+			);
+			path = "Main Contents";
+			sourceTree = "<group>";
+		};
+		046CCBB623D45A1B004A342A /* Drawer Component */ = {
+			isa = PBXGroup;
+			children = (
+				046CCBB723D45A1B004A342A /* DrawerOption.swift */,
+				046CCBB823D45A1B004A342A /* DrawerParentViewController.swift */,
+			);
+			path = "Drawer Component";
 			sourceTree = "<group>";
 		};
 		04B41C9D23CF935C00B19873 /* SCNBox Loop */ = {
@@ -379,6 +447,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				046126C922686A1E002AB0ED /* TextSaveOnPlane.storyboard in Resources */,
+				046CCBBD23D45A1C004A342A /* DrawerMainSample.storyboard in Resources */,
 				0461268F2268559E002AB0ED /* art.scnassets in Resources */,
 				046126CE2268810A002AB0ED /* SetMirror.storyboard in Resources */,
 				046126C322686461002AB0ED /* Drawing.storyboard in Resources */,
@@ -387,8 +456,10 @@
 				046126962268559F002AB0ED /* Assets.xcassets in Resources */,
 				04C39E3623124C820027979B /* ObjectDistance.storyboard in Resources */,
 				046126BE22685616002AB0ED /* SetShip.storyboard in Resources */,
+				046CCBBB23D45A1C004A342A /* DrawerApp.storyboard in Resources */,
 				046126942268559E002AB0ED /* Main.storyboard in Resources */,
 				046126D322688579002AB0ED /* Card.storyboard in Resources */,
+				046CCBB923D45A1C004A342A /* DrawerMenu.storyboard in Resources */,
 				045BD90C23782500003CC8FD /* BLESerial.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -414,12 +485,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				046CCBBF23D45A1C004A342A /* DrawerNavigationController.swift in Sources */,
+				046CCBBC23D45A1C004A342A /* DrawerMainSampleViewController.swift in Sources */,
 				04B41CA623D31C8400B19873 /* UIColor+Common.swift in Sources */,
 				043205AD23C7E9B900B6BF4C /* BLESerialViewController2.swift in Sources */,
 				04388467231E4D10004B0CE2 /* ObjectDistance2ViewController.swift in Sources */,
 				047178F5232191FA00E0CE22 /* ObjectDistance3ViewController.swift in Sources */,
 				046126C522686482002AB0ED /* DrawingViewController.swift in Sources */,
 				046126D52268858A002AB0ED /* CardViewController.swift in Sources */,
+				046CCBC123D45A1C004A342A /* DrawerParentViewController.swift in Sources */,
 				04B41CA423D3141400B19873 /* Constants.swift in Sources */,
 				046126912268559E002AB0ED /* ViewController.swift in Sources */,
 				04B41C9F23CF93AA00B19873 /* SCNBoxLoopViewController.swift in Sources */,
@@ -428,8 +502,11 @@
 				04C39E3323124C150027979B /* ObjectDistanceViewController.swift in Sources */,
 				046126CB22686A2F002AB0ED /* TextSaveOnPlaneViewController.swift in Sources */,
 				045BD90E23782511003CC8FD /* BLESerialViewController.swift in Sources */,
+				046CCBBE23D45A1C004A342A /* DrawerAppViewController.swift in Sources */,
 				046126C022685624002AB0ED /* SetShipViewController.swift in Sources */,
 				0461268D2268559E002AB0ED /* AppDelegate.swift in Sources */,
+				046CCBBA23D45A1C004A342A /* DrawerMenuViewController.swift in Sources */,
+				046CCBC023D45A1C004A342A /* DrawerOption.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
