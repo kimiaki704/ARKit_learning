@@ -83,65 +83,72 @@ class BLESerialViewController: UIViewController, CBCentralManagerDelegate, CBPer
     
     // サービスを発見すると呼ばれる
     func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: Error?) {
+        print(peripheral.services!)
         let service: CBService = peripheral.services![0]
         self.scanCharacteristics(service)
     }
     
     // キャラスタリスティックを発見すると呼ばれる
     func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?) {
-        let characteristic: CBCharacteristic = service.characteristics![0]
-        self.characteristic = characteristic
-        
+        print(service.characteristics!)
+        for characreristic in service.characteristics!{
+            if characreristic.uuid.uuidString == "FEEDAA03-C497-4476-A7ED-727DE7648AB1" {
+                //Notificationを受け取るハンドラ
+                peripheral.setNotifyValue(true, for: characreristic)
+            }
+            
+            if characreristic.uuid.uuidString == "FEEDAA02-C497-4476-A7ED-727DE7648AB1" {
+                self.characteristic = characreristic
+            }
+        }
         peripheralReady = true
+        
+        
     }
     
     // MARK: - Method
     
     func scanBLESerial3() {
+        print("scanBLESerial3")
         let BLESerial3UUID: [CBUUID] = [CBUUID.init(string: "FEED0001-C497-4476-A7ED-727DE7648AB1")]
         self.centralManager?.scanForPeripherals(withServices: BLESerial3UUID, options: nil)
     }
     
     func stopScan() {
+        print("stopscan")
         self.centralManager.stopScan()
     }
     
     func connectPeripheral(peripheral: CBPeripheral) {
+        print("connectPeripheral")
         self.peripheral = peripheral
         self.centralManager.connect(self.peripheral, options: nil)
     }
     
     func scanService() {
+        print("scanService")
         self.peripheral.delegate = self
         let TXCBUUID: [CBUUID] = [CBUUID.init(string: "FEED0001-C497-4476-A7ED-727DE7648AB1")]
         self.peripheral.discoverServices(TXCBUUID)
     }
     
     func scanCharacteristics(_ service: CBService) {
-        let characteristics: [CBUUID] = [CBUUID.init(string: "FEEDAA02-C497-4476-A7ED-727DE7648AB1")]
+        print("scanCharacteristics")
+        let characteristics: [CBUUID] = [CBUUID.init(string: "FEEDAA02-C497-4476-A7ED-727DE7648AB1"), CBUUID.init(string: "FEEDAA03-C497-4476-A7ED-727DE7648AB1")]
         self.peripheral.discoverCharacteristics(characteristics, for: service)
     }
     
     // MARK: - Get Value
     func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
         let data: Data = characteristic.value!
-        let hexStr = data.map { String(format: "%02hhx ", $0) }.joined()
-        print(hexStr)
-    }
-    
-    func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor descriptor: CBDescriptor, error: Error?) {
-        if let error = error {
-            print("Failed... error: \(error)")
-            return
-        }
-        
-        print("Succeeded! service uuid: \(characteristic.service.uuid), characteristic uuid: \(characteristic.uuid), value: \(characteristic.value)")
+        print(String(data: data, encoding: .utf8)!)
+        print(characteristic.value!)
     }
     
     // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        addChild(navigationController!)
+        
         // centralManagerを初期化する
         self.centralManager = CBCentralManager(delegate: self, queue: nil)
     }

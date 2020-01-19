@@ -40,6 +40,7 @@
 		046CCBEF23D45B85004A342A /* DrawerParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046CCBE623D45B85004A342A /* DrawerParentViewController.swift */; };
 		046CCBF123D45C7E004A342A /* UIStoryboard+Instantiate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046CCBF023D45C7E004A342A /* UIStoryboard+Instantiate.swift */; };
 		046CCBF323D45CA3004A342A /* UIView+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046CCBF223D45CA3004A342A /* UIView+Animation.swift */; };
+		046CCBF523D4A8E3004A342A /* BLESerialViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046CCBF423D4A8E3004A342A /* BLESerialViewController3.swift */; };
 		047178F5232191FA00E0CE22 /* ObjectDistance3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047178F4232191FA00E0CE22 /* ObjectDistance3ViewController.swift */; };
 		04B41C9F23CF93AA00B19873 /* SCNBoxLoopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B41C9E23CF93AA00B19873 /* SCNBoxLoopViewController.swift */; };
 		04B41CA123CF948B00B19873 /* SCNBox.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04B41CA023CF948B00B19873 /* SCNBox.storyboard */; };
@@ -107,6 +108,7 @@
 		046CCBE623D45B85004A342A /* DrawerParentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerParentViewController.swift; sourceTree = "<group>"; };
 		046CCBF023D45C7E004A342A /* UIStoryboard+Instantiate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Instantiate.swift"; sourceTree = "<group>"; };
 		046CCBF223D45CA3004A342A /* UIView+Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Animation.swift"; sourceTree = "<group>"; };
+		046CCBF423D4A8E3004A342A /* BLESerialViewController3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLESerialViewController3.swift; sourceTree = "<group>"; };
 		047178F4232191FA00E0CE22 /* ObjectDistance3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectDistance3ViewController.swift; sourceTree = "<group>"; };
 		04B41C9E23CF93AA00B19873 /* SCNBoxLoopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCNBoxLoopViewController.swift; sourceTree = "<group>"; };
 		04B41CA023CF948B00B19873 /* SCNBox.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SCNBox.storyboard; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				045BD90B23782500003CC8FD /* BLESerial.storyboard */,
 				045BD90D23782511003CC8FD /* BLESerialViewController.swift */,
 				043205AC23C7E9B900B6BF4C /* BLESerialViewController2.swift */,
+				046CCBF423D4A8E3004A342A /* BLESerialViewController3.swift */,
 			);
 			path = "BLE Serial";
 			sourceTree = "<group>";
@@ -494,6 +497,7 @@
 				046CCBEA23D45B85004A342A /* DrawerMainSampleViewController.swift in Sources */,
 				04B41CA623D31C8400B19873 /* UIColor+Common.swift in Sources */,
 				043205AD23C7E9B900B6BF4C /* BLESerialViewController2.swift in Sources */,
+				046CCBF523D4A8E3004A342A /* BLESerialViewController3.swift in Sources */,
 				04388467231E4D10004B0CE2 /* ObjectDistance2ViewController.swift in Sources */,
 				046CCBF323D45CA3004A342A /* UIView+Animation.swift in Sources */,
 				047178F5232191FA00E0CE22 /* ObjectDistance3ViewController.swift in Sources */,
