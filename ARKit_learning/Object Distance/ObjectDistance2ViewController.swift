@@ -100,77 +100,52 @@ extension ObjectDistance2ViewController: ARSCNViewDelegate {
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
         
         if let imageAnchor = anchor as? ARImageAnchor {
-            //            let size = imageAnchor.referenceImage.physicalSize
-            //            let plane = SCNPlane(width: size.width, height: size.height)
-            //            plane.firstMaterial?.diffuse.contents = UIColor.white.withAlphaComponent(0.5)
-            //            plane.firstMaterial?.diffuse.contents = UIImage(named: "test")!.alpha(0.5)
-            //            plane.cornerRadius = 0.005
-            //
-            //            let planeNode = SCNNode(geometry: plane)
-            //            planeNode.eulerAngles.x = -.pi / 2
-            //            planeNode.position = SCNVector3(0, 0, 20)
-            //            node.addChildNode(planeNode)
             
             print("---------------")
             print(imageAnchor.referenceImage.name)
-//            print("Anchor ID = \(imageAnchor.identifier)")
-//            print(imageAnchor.transform.columns)
-            
-            //            let nodeHolder = SCNNode()
-            //            let nodeGeometry = SCNBox(width: 0.02, height: 0.02, length: 0.02, chamferRadius: 0)
-            //            nodeGeometry.firstMaterial?.diffuse.contents = UIColor.cyan
-            //            nodeHolder.geometry = nodeGeometry
-            //            let pos = SCNVector3(imageAnchor.transform.columns.3.x,
-            //                                imageAnchor.transform.columns.3.y,
-            //                                imageAnchor.transform.columns.3.z)
-            //            nodeHolder.position = pos
-            //            sceneView?.scene.rootNode.addChildNode(nodeHolder)
-            //
-            //            let nodeHolder2 = SCNNode()
-            //            let nodeGeometry2 = SCNBox(width: 0.02, height: 0.02, length: 0.02, chamferRadius: 0)
-            //            nodeGeometry2.firstMaterial?.diffuse.contents = UIColor.red
-            //            nodeHolder2.geometry = nodeGeometry2
-            //            let pos2 = SCNVector3(imageAnchor.transform.columns.3.x - 0.01,
-            //                                 imageAnchor.transform.columns.3.y,
-            //                                 imageAnchor.transform.columns.3.z)
-            //            nodeHolder2.position = pos2
-            //            sceneView?.scene.rootNode.addChildNode(nodeHolder2)
-            //
-            //            let nodeHolder3 = SCNNode()
-            //            let nodeGeometry3 = SCNBox(width: 0.02, height: 0.02, length: 0.02, chamferRadius: 0)
-            //            nodeGeometry3.firstMaterial?.diffuse.contents = UIColor.yellow
-            //            nodeHolder3.geometry = nodeGeometry3
-            //            let pos3 = SCNVector3(imageAnchor.transform.columns.3.x,
-            //                                 imageAnchor.transform.columns.3.y - 0.01,
-            //                                 imageAnchor.transform.columns.3.z)
-            //            nodeHolder3.position = pos3
-            //            sceneView?.scene.rootNode.addChildNode(nodeHolder3)
-            //
-            //            let nodeHolder4 = SCNNode()
-            //            let nodeGeometry4 = SCNBox(width: 0.02, height: 0.02, length: 0.02, chamferRadius: 0)
-            //            nodeGeometry4.firstMaterial?.diffuse.contents = UIColor.blue
-            //            nodeHolder4.geometry = nodeGeometry4
-            //            let pos4 = SCNVector3(imageAnchor.transform.columns.3.x,
-            //                                 imageAnchor.transform.columns.3.y,
-            //                                 imageAnchor.transform.columns.3.z - 0.01)
-            //            nodeHolder4.position = pos4
-            //            sceneView?.scene.rootNode.addChildNode(nodeHolder4)
             
             
             referenceImageName = imageAnchor.referenceImage.name!
             
             if (imageAnchor.referenceImage.name?.contains("rail"))! && nodesArray.isEmpty {
                 let size = imageAnchor.referenceImage.physicalSize
+                /// width:1 = 1m
+                /// imageAnchorに対して正面をみたとき
+                /// width: 横幅
+                /// height: 奥行き
+                /// length: 縦幅
+                let box = SCNBox(width: 0.01, height: 0.01, length: 0.01, chamferRadius: 0)
+                box.firstMaterial?.diffuse.contents = UIColor.white.withAlphaComponent(0.5)
+                
                 let plane = SCNPlane(width: size.width, height: size.height)
                 plane.firstMaterial?.diffuse.contents = UIColor.white.withAlphaComponent(0.5)
                 plane.cornerRadius = 0.005
                 let planeNode = SCNNode(geometry: plane)
                 planeNode.eulerAngles.x = -.pi / 2
+                
                 node.name = "rail"
                 coilPosition = SCNVector3(imageAnchor.transform.columns.3.x,
                                           imageAnchor.transform.columns.3.y,
                                           imageAnchor.transform.columns.3.z)
-                node.addChildNode(planeNode)
+//                node.addChildNode(planeNode)
+                
+                /// width:0.24525
+                /// height: 0.087
+                /// imageAnchorに対して正面をみたとき
+                /// x: 横 - 右側に正
+                /// y: 奥行き - 手前側に正
+                /// z: 縦 - 下側に正
+                for i in 0...24 {
+                    for j in 0...8 {
+                        for k in 0...5 {
+                            let boxNode = SCNNode(geometry: box)
+                            boxNode.position = SCNVector3(boxNode.position.x - 0.122625 + (Float(i) * 0.01), boxNode.position.y + (Float(k) * 0.01), boxNode.position.z - 0.0435 + (Float(j) * 0.01))
+                            node.addChildNode(boxNode)
+                        }
+                    }
+                }
+//                boxNode.position = SCNVector3(coilPosition.x - 0.05, boxNode.position.y, boxNode.position.z)
+//                node.addChildNode(boxNode)
                 
                 nodesArray.append(node)
             }
