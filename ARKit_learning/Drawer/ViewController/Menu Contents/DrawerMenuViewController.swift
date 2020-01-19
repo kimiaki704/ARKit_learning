@@ -8,9 +8,25 @@
 
 import UIKit
 
+protocol DrawerMenuViewControllerDelegate: class {
+    func okButtonTapped(_ drawerMenuViewController: DrawerMenuViewController, sliderValue: Double)
+}
+
 final class DrawerMenuViewController: UIViewController {
-    @IBOutlet weak private var backToHomeButton: UIButton!
-    @IBAction private func backToHomeButtonTapped(_ sender: UIButton) {
-        navigationController?.popToRootViewController(animated: true)
+    weak var delegate: DrawerMenuViewControllerDelegate?
+    
+    @IBOutlet private weak var sliderValueLabel: UILabel!
+    @IBOutlet private weak var slider: UISlider!
+    @IBAction private func okButtonTapped(_ sender: UIButton) {
+        guard let sliderValue: Double = Double(self.sliderValueLabel.text!) else { return }
+        delegate?.okButtonTapped(self, sliderValue: sliderValue)
+    }
+    @IBAction func sliderChanged(_ sender: UISlider) {
+        sliderValueLabel.text = String(sender.value * 10)
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        sliderValueLabel.text = String(slider.value * 10)
     }
 }

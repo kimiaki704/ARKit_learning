@@ -22,6 +22,10 @@ final class DrawerNavigationController: UINavigationController {
         topViewController?.navigationItem.leftBarButtonItem = UIBarButtonItem(image: leftBarIcon, style: .plain, target: self, action: #selector(tappedLeftBarButton))
     }
     
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

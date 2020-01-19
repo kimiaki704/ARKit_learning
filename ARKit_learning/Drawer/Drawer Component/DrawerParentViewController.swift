@@ -78,11 +78,18 @@ extension DrawerParentViewController {
     }
     
     private func setUpOverlay() {
-        overlayView = UIView(frame: view.bounds)
+        overlayView = UIView()
+        overlayView.translatesAutoresizingMaskIntoConstraints = false
+        
         overlayView.backgroundColor = overlayColor
         overlayView.alpha = 0
         overlayView.isUserInteractionEnabled = false
         mainViewController.view.addSubview(overlayView)
+        
+        overlayView.topAnchor.constraint(equalTo: mainViewController.view.topAnchor, constant: 0).isActive = true
+        overlayView.leadingAnchor.constraint(equalTo: mainViewController.view.safeAreaLayoutGuide.leadingAnchor, constant: 0).isActive = true
+        overlayView.trailingAnchor.constraint(equalTo: mainViewController.view.safeAreaLayoutGuide.trailingAnchor, constant: 0).isActive = true
+        overlayView.bottomAnchor.constraint(equalTo: mainViewController.view.bottomAnchor, constant: 0).isActive = true
     }
 }
 

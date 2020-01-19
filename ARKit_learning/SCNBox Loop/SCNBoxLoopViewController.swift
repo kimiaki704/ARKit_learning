@@ -30,6 +30,10 @@ final class SCNBoxLoopViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if let vc = parent?.parent?.children[1] as? DrawerMenuViewController {
+            vc.delegate = self
+        }
+        
         sceneView.showsStatistics = true
         sceneView.debugOptions = [ARSCNDebugOptions.showFeaturePoints,ARSCNDebugOptions.showWorldOrigin]
         sceneView.delegate = self
@@ -58,9 +62,6 @@ extension SCNBoxLoopViewController: ARSCNViewDelegate {
         
         if let imageAnchor = anchor as? ARImageAnchor {
             
-            print("---------------")
-            print(imageAnchor.referenceImage.name)
-            
             if (imageAnchor.referenceImage.name?.contains("rail"))! {
                 let size = imageAnchor.referenceImage.physicalSize
                 /// width:1 = 1m
@@ -68,8 +69,6 @@ extension SCNBoxLoopViewController: ARSCNViewDelegate {
                 /// width: 横幅
                 /// height: 奥行き
                 /// length: 縦幅
-//                let box = SCNBox(width: 0.01, height: 0.01, length: 0.01, chamferRadius: 0)
-//                box.firstMaterial?.diffuse.contents = UIColor.white.withAlphaComponent(0.5)
                 
                 node.name = "rail"
                 
@@ -89,9 +88,6 @@ extension SCNBoxLoopViewController: ARSCNViewDelegate {
                             box.firstMaterial?.diffuse.contents = commonSetting.getHeatColor(data: heatArray[x]).withAlphaComponent(0.5)
                             let boxNode = SCNNode(geometry: box)
                             boxNode.position = SCNVector3(boxNode.position.x - 0.122625 + (Float(x) * 0.01), boxNode.position.y + (Float(y) * 0.01), boxNode.position.z - 0.0435 + (Float(z) * 0.01))
-//                            if heatArray[x] == HeatColors.dataDarkBlue || heatArray[x] == HeatColors.dataBlue {
-//                                boxNode.isHidden = true
-//                            }
                             boxNode.name = String(heatArray[x])
                             boxNodes.append(boxNode)
                             node.addChildNode(boxNode)
@@ -103,11 +99,6 @@ extension SCNBoxLoopViewController: ARSCNViewDelegate {
     }
     
     private func resetSceneView() {
-        for boxNode in boxNodes {
-            if boxNode.name == String(HeatColors.dataDarkBlue) || boxNode.name == String(HeatColors.dataBlue) {
-                boxNode.isHidden = true
-            }
-        }
         
 //        sceneView.session.pause()
 //        sceneView.scene.rootNode.enumerateChildNodes { (node, _) in
@@ -115,5 +106,19 @@ extension SCNBoxLoopViewController: ARSCNViewDelegate {
 //        }
 //
 //        sceneView.session.run(configuration, options: [.removeExistingAnchors, .resetTracking])
+    }
+}
+
+extension SCNBoxLoopViewController: DrawerMenuViewControllerDelegate {
+    func okButtonTapped(_ drawerMenuViewController: DrawerMenuViewController, sliderValue: Double) {
+        for boxNode in boxNodes {
+            guard let value = Double(boxNode.name!) else { return }
+            
+            if sliderValue >= value {
+                boxNode.isHidden = true
+            } else {
+                boxNode.isHidden = false
+            }
+        }
     }
 }
