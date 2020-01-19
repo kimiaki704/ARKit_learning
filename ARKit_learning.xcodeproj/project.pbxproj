@@ -30,6 +30,10 @@
 		046126D322688579002AB0ED /* Card.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 046126D222688579002AB0ED /* Card.storyboard */; };
 		046126D52268858A002AB0ED /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046126D42268858A002AB0ED /* CardViewController.swift */; };
 		047178F5232191FA00E0CE22 /* ObjectDistance3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047178F4232191FA00E0CE22 /* ObjectDistance3ViewController.swift */; };
+		04B41C9F23CF93AA00B19873 /* SCNBoxLoopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B41C9E23CF93AA00B19873 /* SCNBoxLoopViewController.swift */; };
+		04B41CA123CF948B00B19873 /* SCNBox.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04B41CA023CF948B00B19873 /* SCNBox.storyboard */; };
+		04B41CA423D3141400B19873 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B41CA323D3141400B19873 /* Constants.swift */; };
+		04B41CA623D31C8400B19873 /* UIColor+Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B41CA523D31C8400B19873 /* UIColor+Common.swift */; };
 		04C39E3123124BD20027979B /* UIImage+Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C39E3023124BD20027979B /* UIImage+Common.swift */; };
 		04C39E3323124C150027979B /* ObjectDistanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C39E3223124C150027979B /* ObjectDistanceViewController.swift */; };
 		04C39E3623124C820027979B /* ObjectDistance.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04C39E3523124C820027979B /* ObjectDistance.storyboard */; };
@@ -82,6 +86,10 @@
 		046126D222688579002AB0ED /* Card.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Card.storyboard; sourceTree = "<group>"; };
 		046126D42268858A002AB0ED /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
 		047178F4232191FA00E0CE22 /* ObjectDistance3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectDistance3ViewController.swift; sourceTree = "<group>"; };
+		04B41C9E23CF93AA00B19873 /* SCNBoxLoopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCNBoxLoopViewController.swift; sourceTree = "<group>"; };
+		04B41CA023CF948B00B19873 /* SCNBox.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SCNBox.storyboard; sourceTree = "<group>"; };
+		04B41CA323D3141400B19873 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		04B41CA523D31C8400B19873 /* UIColor+Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Common.swift"; sourceTree = "<group>"; };
 		04C39E3023124BD20027979B /* UIImage+Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Common.swift"; sourceTree = "<group>"; };
 		04C39E3223124C150027979B /* ObjectDistanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectDistanceViewController.swift; sourceTree = "<group>"; };
 		04C39E3523124C820027979B /* ObjectDistance.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ObjectDistance.storyboard; sourceTree = "<group>"; };
@@ -145,6 +153,8 @@
 		0461268B2268559E002AB0ED /* ARKit_learning */ = {
 			isa = PBXGroup;
 			children = (
+				04B41CA223D3135000B19873 /* Common */,
+				04B41C9D23CF935C00B19873 /* SCNBox Loop */,
 				045BD90A237824CF003CC8FD /* BLE Serial */,
 				04C39E3423124C1C0027979B /* Object Distance */,
 				04C39E2F23124B9A0027979B /* Extension */,
@@ -225,6 +235,24 @@
 				046126D42268858A002AB0ED /* CardViewController.swift */,
 			);
 			path = Card;
+			sourceTree = "<group>";
+		};
+		04B41C9D23CF935C00B19873 /* SCNBox Loop */ = {
+			isa = PBXGroup;
+			children = (
+				04B41C9E23CF93AA00B19873 /* SCNBoxLoopViewController.swift */,
+				04B41CA023CF948B00B19873 /* SCNBox.storyboard */,
+			);
+			path = "SCNBox Loop";
+			sourceTree = "<group>";
+		};
+		04B41CA223D3135000B19873 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				04B41CA323D3141400B19873 /* Constants.swift */,
+				04B41CA523D31C8400B19873 /* UIColor+Common.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		04C39E2F23124B9A0027979B /* Extension */ = {
@@ -355,6 +383,7 @@
 				046126CE2268810A002AB0ED /* SetMirror.storyboard in Resources */,
 				046126C322686461002AB0ED /* Drawing.storyboard in Resources */,
 				046126992268559F002AB0ED /* LaunchScreen.storyboard in Resources */,
+				04B41CA123CF948B00B19873 /* SCNBox.storyboard in Resources */,
 				046126962268559F002AB0ED /* Assets.xcassets in Resources */,
 				04C39E3623124C820027979B /* ObjectDistance.storyboard in Resources */,
 				046126BE22685616002AB0ED /* SetShip.storyboard in Resources */,
@@ -385,12 +414,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04B41CA623D31C8400B19873 /* UIColor+Common.swift in Sources */,
 				043205AD23C7E9B900B6BF4C /* BLESerialViewController2.swift in Sources */,
 				04388467231E4D10004B0CE2 /* ObjectDistance2ViewController.swift in Sources */,
 				047178F5232191FA00E0CE22 /* ObjectDistance3ViewController.swift in Sources */,
 				046126C522686482002AB0ED /* DrawingViewController.swift in Sources */,
 				046126D52268858A002AB0ED /* CardViewController.swift in Sources */,
+				04B41CA423D3141400B19873 /* Constants.swift in Sources */,
 				046126912268559E002AB0ED /* ViewController.swift in Sources */,
+				04B41C9F23CF93AA00B19873 /* SCNBoxLoopViewController.swift in Sources */,
 				046126D02268811B002AB0ED /* SetMirrorViewController.swift in Sources */,
 				04C39E3123124BD20027979B /* UIImage+Common.swift in Sources */,
 				04C39E3323124C150027979B /* ObjectDistanceViewController.swift in Sources */,
