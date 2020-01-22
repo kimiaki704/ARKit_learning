@@ -41,6 +41,8 @@
 		046CCBF123D45C7E004A342A /* UIStoryboard+Instantiate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046CCBF023D45C7E004A342A /* UIStoryboard+Instantiate.swift */; };
 		046CCBF323D45CA3004A342A /* UIView+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046CCBF223D45CA3004A342A /* UIView+Animation.swift */; };
 		046CCBF523D4A8E3004A342A /* BLESerialViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046CCBF423D4A8E3004A342A /* BLESerialViewController3.swift */; };
+		046CCBFB23D7540D004A342A /* BLEARkit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 046CCBFA23D7540D004A342A /* BLEARkit.storyboard */; };
+		046CCBFD23D7541E004A342A /* BLEARkitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046CCBFC23D7541E004A342A /* BLEARkitViewController.swift */; };
 		047178F5232191FA00E0CE22 /* ObjectDistance3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047178F4232191FA00E0CE22 /* ObjectDistance3ViewController.swift */; };
 		04B41C9F23CF93AA00B19873 /* SCNBoxLoopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B41C9E23CF93AA00B19873 /* SCNBoxLoopViewController.swift */; };
 		04B41CA123CF948B00B19873 /* SCNBox.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04B41CA023CF948B00B19873 /* SCNBox.storyboard */; };
@@ -109,6 +111,8 @@
 		046CCBF023D45C7E004A342A /* UIStoryboard+Instantiate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Instantiate.swift"; sourceTree = "<group>"; };
 		046CCBF223D45CA3004A342A /* UIView+Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Animation.swift"; sourceTree = "<group>"; };
 		046CCBF423D4A8E3004A342A /* BLESerialViewController3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLESerialViewController3.swift; sourceTree = "<group>"; };
+		046CCBFA23D7540D004A342A /* BLEARkit.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BLEARkit.storyboard; sourceTree = "<group>"; };
+		046CCBFC23D7541E004A342A /* BLEARkitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEARkitViewController.swift; sourceTree = "<group>"; };
 		047178F4232191FA00E0CE22 /* ObjectDistance3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectDistance3ViewController.swift; sourceTree = "<group>"; };
 		04B41C9E23CF93AA00B19873 /* SCNBoxLoopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCNBoxLoopViewController.swift; sourceTree = "<group>"; };
 		04B41CA023CF948B00B19873 /* SCNBox.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SCNBox.storyboard; sourceTree = "<group>"; };
@@ -144,7 +148,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		045BD90A237824CF003CC8FD /* BLE Serial */ = {
+		045BD90A237824CF003CC8FD /* BLESerial */ = {
 			isa = PBXGroup;
 			children = (
 				045BD90B23782500003CC8FD /* BLESerial.storyboard */,
@@ -152,7 +156,7 @@
 				043205AC23C7E9B900B6BF4C /* BLESerialViewController2.swift */,
 				046CCBF423D4A8E3004A342A /* BLESerialViewController3.swift */,
 			);
-			path = "BLE Serial";
+			path = BLESerial;
 			sourceTree = "<group>";
 		};
 		046126802268559E002AB0ED = {
@@ -178,10 +182,11 @@
 		0461268B2268559E002AB0ED /* ARKit_learning */ = {
 			isa = PBXGroup;
 			children = (
+				046CCBF623D7533E004A342A /* ARkit & BLE Serial */,
 				046CCBD923D45B85004A342A /* Drawer */,
 				04B41CA223D3135000B19873 /* Common */,
 				04B41C9D23CF935C00B19873 /* SCNBox Loop */,
-				045BD90A237824CF003CC8FD /* BLE Serial */,
+				045BD90A237824CF003CC8FD /* BLESerial */,
 				04C39E3423124C1C0027979B /* Object Distance */,
 				04C39E2F23124B9A0027979B /* Extension */,
 				046126D122688561002AB0ED /* Card */,
@@ -309,6 +314,39 @@
 				046CCBE623D45B85004A342A /* DrawerParentViewController.swift */,
 			);
 			path = "Drawer Component";
+			sourceTree = "<group>";
+		};
+		046CCBF623D7533E004A342A /* ARkit & BLE Serial */ = {
+			isa = PBXGroup;
+			children = (
+				046CCBF723D753AF004A342A /* ViewController */,
+			);
+			path = "ARkit & BLE Serial";
+			sourceTree = "<group>";
+		};
+		046CCBF723D753AF004A342A /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				046CCBF923D753CA004A342A /* Side */,
+				046CCBF823D753C3004A342A /* Main */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		046CCBF823D753C3004A342A /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				046CCBFA23D7540D004A342A /* BLEARkit.storyboard */,
+				046CCBFC23D7541E004A342A /* BLEARkitViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		046CCBF923D753CA004A342A /* Side */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Side;
 			sourceTree = "<group>";
 		};
 		04B41C9D23CF935C00B19873 /* SCNBox Loop */ = {
@@ -462,6 +500,7 @@
 				046126992268559F002AB0ED /* LaunchScreen.storyboard in Resources */,
 				04B41CA123CF948B00B19873 /* SCNBox.storyboard in Resources */,
 				046126962268559F002AB0ED /* Assets.xcassets in Resources */,
+				046CCBFB23D7540D004A342A /* BLEARkit.storyboard in Resources */,
 				04C39E3623124C820027979B /* ObjectDistance.storyboard in Resources */,
 				046126BE22685616002AB0ED /* SetShip.storyboard in Resources */,
 				046CCBE923D45B85004A342A /* DrawerApp.storyboard in Resources */,
@@ -493,6 +532,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				046CCBFD23D7541E004A342A /* BLEARkitViewController.swift in Sources */,
 				046CCBED23D45B85004A342A /* DrawerNavigationController.swift in Sources */,
 				046CCBEA23D45B85004A342A /* DrawerMainSampleViewController.swift in Sources */,
 				04B41CA623D31C8400B19873 /* UIColor+Common.swift in Sources */,

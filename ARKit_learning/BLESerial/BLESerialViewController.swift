@@ -141,8 +141,7 @@ class BLESerialViewController: UIViewController, CBCentralManagerDelegate, CBPer
     // MARK: - Get Value
     func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
         let data: Data = characteristic.value!
-        print(String(data: data, encoding: .utf8)!)
-        print(characteristic.value!)
+        print(String(data: data, encoding: .utf8))
     }
     
     // MARK: - LifeCycle
