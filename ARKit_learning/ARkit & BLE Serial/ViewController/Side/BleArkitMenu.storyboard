@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="L2v-TM-vg2">
+    <device id="retina4_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Ble Arkit Menu View Controller-->
+        <scene sceneID="qwu-rL-yhy">
+            <objects>
+                <viewController id="L2v-TM-vg2" customClass="BleArkitMenuViewController" customModule="ARKit_learning" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WaK-De-Y5W">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="no connection" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t9a-dE-APi">
+                                <rect key="frame" x="279" y="15" width="109" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BRc-1g-k6y" customClass="EllipseButton" customModule="ARKit_learning" customModuleProvider="target">
+                                <rect key="frame" x="133.5" y="56" width="100" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="3Pa-Ge-VCf"/>
+                                    <constraint firstAttribute="width" constant="100" id="KSH-c9-8yK"/>
+                                </constraints>
+                                <state key="normal" title="stop"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="22.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="cancelBtnTapped:" destination="L2v-TM-vg2" eventType="touchUpInside" id="lkP-em-ekj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IdD-mi-mEk" customClass="EllipseButton" customModule="ARKit_learning" customModuleProvider="target">
+                                <rect key="frame" x="433.5" y="56" width="100" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="aCO-OB-oko"/>
+                                    <constraint firstAttribute="width" constant="100" id="d90-f2-Vfu"/>
+                                </constraints>
+                                <state key="normal" title="connect"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                        <color key="value" red="0.0" green="0.98106676339999999" blue="0.57369142770000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="22.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="connectBtnTapped:" destination="L2v-TM-vg2" eventType="touchUpInside" id="bb0-GZ-VJj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rzX-bf-8Hj" customClass="EllipseButton" customModule="ARKit_learning" customModuleProvider="target">
+                                <rect key="frame" x="258.5" y="299.5" width="150" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="9dl-rg-58R"/>
+                                    <constraint firstAttribute="height" constant="45" id="JU0-B8-Ne5"/>
+                                </constraints>
+                                <state key="normal" title="OK"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                        <color key="value" red="0.36248000000000002" green="0.73653999999999997" blue="0.92944000000000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="22.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="okButtonTapped:" destination="L2v-TM-vg2" eventType="touchUpInside" id="meT-LY-iOc"/>
+                                </connections>
+                            </button>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="N4H-mq-W5h">
+                                <rect key="frame" x="256.5" y="259.5" width="154" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="YmI-IZ-ck1"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="sliderChanged:" destination="L2v-TM-vg2" eventType="valueChanged" id="I8j-47-3Gn"/>
+                                </connections>
+                            </slider>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6Cq-2s-BjW">
+                                <rect key="frame" x="258.5" y="186.5" width="150" height="2"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="BDX-JQ-Dk7"/>
+                                </constraints>
+                                <color key="progressTintColor" red="0.0" green="0.98106676339999999" blue="0.57369142770000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </progressView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yjQ-Qv-3Tt">
+                                <rect key="frame" x="0.0" y="233.5" width="667" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="stop loading" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vI3-ym-5gU">
+                                <rect key="frame" x="0.0" y="146" width="667" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="RrO-5L-89h" firstAttribute="trailing" secondItem="yjQ-Qv-3Tt" secondAttribute="trailing" id="25x-Gu-ZzB"/>
+                            <constraint firstItem="rzX-bf-8Hj" firstAttribute="centerX" secondItem="WaK-De-Y5W" secondAttribute="centerX" id="4mu-6x-xpZ"/>
+                            <constraint firstItem="vI3-ym-5gU" firstAttribute="top" secondItem="BRc-1g-k6y" secondAttribute="bottom" constant="45" id="8nf-Rb-bHN"/>
+                            <constraint firstItem="yjQ-Qv-3Tt" firstAttribute="leading" secondItem="RrO-5L-89h" secondAttribute="leading" id="BR5-sk-e4W"/>
+                            <constraint firstItem="t9a-dE-APi" firstAttribute="centerX" secondItem="WaK-De-Y5W" secondAttribute="centerX" id="DU1-wq-B88"/>
+                            <constraint firstItem="RrO-5L-89h" firstAttribute="trailing" secondItem="vI3-ym-5gU" secondAttribute="trailing" id="KD7-C8-8Nt"/>
+                            <constraint firstItem="IdD-mi-mEk" firstAttribute="centerX" secondItem="WaK-De-Y5W" secondAttribute="centerX" constant="150" id="Qdp-MI-61U"/>
+                            <constraint firstItem="6Cq-2s-BjW" firstAttribute="centerY" secondItem="WaK-De-Y5W" secondAttribute="centerY" id="Sn5-7V-U2I"/>
+                            <constraint firstItem="rzX-bf-8Hj" firstAttribute="top" secondItem="N4H-mq-W5h" secondAttribute="bottom" constant="10" id="Ubc-de-JtV"/>
+                            <constraint firstItem="vI3-ym-5gU" firstAttribute="leading" secondItem="RrO-5L-89h" secondAttribute="leading" id="Uhp-VQ-DhN"/>
+                            <constraint firstItem="BRc-1g-k6y" firstAttribute="top" secondItem="t9a-dE-APi" secondAttribute="bottom" constant="20" id="daa-zF-vNu"/>
+                            <constraint firstItem="N4H-mq-W5h" firstAttribute="centerX" secondItem="WaK-De-Y5W" secondAttribute="centerX" id="hur-g5-pUe"/>
+                            <constraint firstItem="IdD-mi-mEk" firstAttribute="top" secondItem="t9a-dE-APi" secondAttribute="bottom" constant="20" id="ist-mX-JXH"/>
+                            <constraint firstItem="yjQ-Qv-3Tt" firstAttribute="top" secondItem="6Cq-2s-BjW" secondAttribute="bottom" constant="45" id="izQ-mk-aSB"/>
+                            <constraint firstItem="N4H-mq-W5h" firstAttribute="top" secondItem="yjQ-Qv-3Tt" secondAttribute="bottom" constant="5" id="mQ3-Xt-n7Q"/>
+                            <constraint firstItem="t9a-dE-APi" firstAttribute="top" secondItem="RrO-5L-89h" secondAttribute="top" constant="15" id="rSb-cc-gXe"/>
+                            <constraint firstItem="6Cq-2s-BjW" firstAttribute="centerX" secondItem="WaK-De-Y5W" secondAttribute="centerX" id="sXp-pT-IDg"/>
+                            <constraint firstItem="BRc-1g-k6y" firstAttribute="centerX" secondItem="WaK-De-Y5W" secondAttribute="centerX" constant="-150" id="yjg-jV-HQG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="RrO-5L-89h"/>
+                    </view>
+                    <connections>
+                        <outlet property="SSIDUILabel" destination="t9a-dE-APi" id="OY3-a1-HLF"/>
+                        <outlet property="okButton" destination="rzX-bf-8Hj" id="h3A-V1-BbD"/>
+                        <outlet property="progress" destination="6Cq-2s-BjW" id="G2a-Me-Lks"/>
+                        <outlet property="progressStatusLabel" destination="vI3-ym-5gU" id="rU2-kU-wXP"/>
+                        <outlet property="slider" destination="N4H-mq-W5h" id="onH-yY-2mm"/>
+                        <outlet property="sliderValueLabel" destination="yjQ-Qv-3Tt" id="beB-eG-kKi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mhd-I5-IWV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="89.505247376311857" y="80.799999999999997"/>
+        </scene>
+    </scenes>
+</document>
