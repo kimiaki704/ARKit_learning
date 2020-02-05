@@ -17,6 +17,7 @@ final class SCNBoxLoopViewController: UIViewController {
     private let configuration: ARWorldTrackingConfiguration = {
         let conf = ARWorldTrackingConfiguration()
         
+        let image = ARReferenceImage((UIImage(named: "oppai")?.cgImage)!, orientation: .up, physicalWidth: 0.1)
         let images = ARReferenceImage.referenceImages(inGroupNamed: "AR Car", bundle: nil)
         conf.detectionImages = images!
         conf.maximumNumberOfTrackedImages = 1

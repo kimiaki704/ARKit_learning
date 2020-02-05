@@ -196,6 +196,7 @@ extension ObjectDistanceViewController: ARSCNViewDelegate {
             
             referenceImageName = imageAnchor.referenceImage.name!
             if (imageAnchor.referenceImage.name?.contains("coil"))! && nodesArray.isEmpty {
+                
                 coilSize = imageAnchor.referenceImage.physicalSize
                 let size = imageAnchor.referenceImage.physicalSize
                 let plane = SCNPlane(width: size.width, height: size.height)
@@ -306,7 +307,7 @@ extension ObjectDistanceViewController: ARSCNViewDelegate {
             let positionOne = SCNVector3ToGLKVector3(node0Pos)
             let positionTwo = SCNVector3ToGLKVector3(node1Pos)
             var distance = GLKVector3Distance(positionOne, positionTwo)
-
+            nodesArray[0].eulerAngles
             if nodesArray[1].position.x - nodesArray[0].position.x < 0 {
                 distance *= -1.0
             }
