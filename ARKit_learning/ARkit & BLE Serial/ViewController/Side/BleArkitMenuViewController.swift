@@ -28,7 +28,6 @@ final class BleArkitMenuViewController: UIViewController, CBCentralManagerDelega
         return numberOfX * numberOfY * numberOfZ
     }
     
-    
     private var centralManager: CBCentralManager!
     private var peripheral: CBPeripheral!
     private var characteristic: CBCharacteristic!
