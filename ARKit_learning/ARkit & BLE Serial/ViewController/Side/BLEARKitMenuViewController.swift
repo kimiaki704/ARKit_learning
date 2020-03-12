@@ -1,5 +1,5 @@
 //
-//  BleArkitMenuViewController.swift
+//  BLEARKitMenuViewController.swift
 //  ARKit_learning
 //
 //  Created by 鈴木公章 on 2020/01/22.
@@ -9,21 +9,21 @@
 import UIKit
 import CoreBluetooth
 
-protocol BleArkitMenuViewControllerDelegate: class {
-    func okButtonTapped(_ bleArkitMenuViewController: BleArkitMenuViewController, sliderValue: Double)
+protocol BLEARKitMenuViewControllerDelegate: class {
+    func okButtonTapped(_ BLEARKitMenuViewController: BLEARKitMenuViewController, sliderValue: Double)
     func completedBLE(_ data: [[[Double]]])
 }
 
-final class BleArkitMenuViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDelegate {
-    weak var delegate: BleArkitMenuViewControllerDelegate?
+final class BLEARKitMenuViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDelegate {
+    weak var delegate: BLEARKitMenuViewControllerDelegate?
     private var xArray: [Double] = []
     private var zArray: [[Double]] = []
     private var nodeData: [[[Double]]] = []
     private var nodeCounter: Int = 0
     
-    private var numberOfX: Int = BleArkitSettings.Constants.numberOfX
-    private var numberOfY: Int = BleArkitSettings.Constants.numberOfY
-    private var numberOfZ: Int = BleArkitSettings.Constants.numberOfZ
+    private var numberOfX: Int = BLEARKitSettings.Constants.numberOfX
+    private var numberOfY: Int = BLEARKitSettings.Constants.numberOfY
+    private var numberOfZ: Int = BLEARKitSettings.Constants.numberOfZ
     private var numberOfAll: Int {
         return numberOfX * numberOfY * numberOfZ
     }

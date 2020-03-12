@@ -16,8 +16,7 @@ final class SCNBoxLoopViewController: UIViewController {
     
     private let configuration: ARWorldTrackingConfiguration = {
         let conf = ARWorldTrackingConfiguration()
-        
-        let image = ARReferenceImage((UIImage(named: "oppai")?.cgImage)!, orientation: .up, physicalWidth: 0.1)
+
         let images = ARReferenceImage.referenceImages(inGroupNamed: "AR Car", bundle: nil)
         conf.detectionImages = images!
         conf.maximumNumberOfTrackedImages = 1
@@ -36,7 +35,7 @@ final class SCNBoxLoopViewController: UIViewController {
         }
         
         sceneView.showsStatistics = true
-        sceneView.debugOptions = [ARSCNDebugOptions.showFeaturePoints,ARSCNDebugOptions.showWorldOrigin]
+        sceneView.debugOptions = [ARSCNDebugOptions.showFeaturePoints, ARSCNDebugOptions.showWorldOrigin]
         sceneView.delegate = self
     }
     
@@ -58,13 +57,9 @@ final class SCNBoxLoopViewController: UIViewController {
 }
 
 extension SCNBoxLoopViewController: ARSCNViewDelegate {
-    
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
-        
         if let imageAnchor = anchor as? ARImageAnchor {
-            
             if (imageAnchor.referenceImage.name?.contains("rail"))! {
-                let size = imageAnchor.referenceImage.physicalSize
                 /// width:1 = 1m
                 /// imageAnchorに対して正面をみたとき
                 /// width: 横幅
@@ -100,13 +95,12 @@ extension SCNBoxLoopViewController: ARSCNViewDelegate {
     }
     
     private func resetSceneView() {
-        
-//        sceneView.session.pause()
-//        sceneView.scene.rootNode.enumerateChildNodes { (node, _) in
-//            node.removeFromParentNode()
-//        }
-//
-//        sceneView.session.run(configuration, options: [.removeExistingAnchors, .resetTracking])
+        sceneView.session.pause()
+        sceneView.scene.rootNode.enumerateChildNodes { (node, _) in
+            node.removeFromParentNode()
+        }
+
+        sceneView.session.run(configuration, options: [.removeExistingAnchors, .resetTracking])
     }
 }
 

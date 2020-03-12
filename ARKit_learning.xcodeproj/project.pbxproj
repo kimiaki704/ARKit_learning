@@ -29,9 +29,9 @@
 		046126D02268811B002AB0ED /* SetMirrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046126CF2268811B002AB0ED /* SetMirrorViewController.swift */; };
 		046126D322688579002AB0ED /* Card.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 046126D222688579002AB0ED /* Card.storyboard */; };
 		046126D52268858A002AB0ED /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046126D42268858A002AB0ED /* CardViewController.swift */; };
-		0468120A23D89001002A99AE /* BleArkitDrawer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0468120923D89001002A99AE /* BleArkitDrawer.storyboard */; };
-		0468120C23D89031002A99AE /* BleArkitDrawerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0468120B23D89031002A99AE /* BleArkitDrawerViewController.swift */; };
-		046CCBE723D45B85004A342A /* DrawerMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 046CCBDC23D45B85004A342A /* DrawerMenu.storyboard */; };
+		0468120A23D89001002A99AE /* BLEARKitDrawerViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0468120923D89001002A99AE /* BLEARKitDrawerViewController.storyboard */; };
+		0468120C23D89031002A99AE /* BLEARKitDrawerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0468120B23D89031002A99AE /* BLEARKitDrawerViewController.swift */; };
+		046CCBE723D45B85004A342A /* DrawerMenuViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 046CCBDC23D45B85004A342A /* DrawerMenuViewController.storyboard */; };
 		046CCBE823D45B85004A342A /* DrawerMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046CCBDD23D45B85004A342A /* DrawerMenuViewController.swift */; };
 		046CCBE923D45B85004A342A /* DrawerApp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 046CCBDE23D45B85004A342A /* DrawerApp.storyboard */; };
 		046CCBEA23D45B85004A342A /* DrawerMainSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046CCBE023D45B85004A342A /* DrawerMainSampleViewController.swift */; };
@@ -43,15 +43,15 @@
 		046CCBF123D45C7E004A342A /* UIStoryboard+Instantiate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046CCBF023D45C7E004A342A /* UIStoryboard+Instantiate.swift */; };
 		046CCBF323D45CA3004A342A /* UIView+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046CCBF223D45CA3004A342A /* UIView+Animation.swift */; };
 		046CCBF523D4A8E3004A342A /* BLESerialViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046CCBF423D4A8E3004A342A /* BLESerialViewController3.swift */; };
-		046CCBFB23D7540D004A342A /* BleArkit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 046CCBFA23D7540D004A342A /* BleArkit.storyboard */; };
-		046CCBFD23D7541E004A342A /* BleArkitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046CCBFC23D7541E004A342A /* BleArkitViewController.swift */; };
-		046CCC0023D880FD004A342A /* BleArkitMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 046CCBFF23D880FD004A342A /* BleArkitMenu.storyboard */; };
-		046CCC0223D88109004A342A /* BleArkitMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046CCC0123D88109004A342A /* BleArkitMenuViewController.swift */; };
+		046CCBFB23D7540D004A342A /* BLEARKitViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 046CCBFA23D7540D004A342A /* BLEARKitViewController.storyboard */; };
+		046CCBFD23D7541E004A342A /* BLEARKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046CCBFC23D7541E004A342A /* BLEARKitViewController.swift */; };
+		046CCC0023D880FD004A342A /* BLEARKitMenuViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 046CCBFF23D880FD004A342A /* BLEARKitMenuViewController.storyboard */; };
+		046CCC0223D88109004A342A /* BLEARKitMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046CCC0123D88109004A342A /* BLEARKitMenuViewController.swift */; };
 		046CCC0423D8820E004A342A /* EllipseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046CCC0323D8820E004A342A /* EllipseButton.swift */; };
 		047178F5232191FA00E0CE22 /* ObjectDistance3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047178F4232191FA00E0CE22 /* ObjectDistance3ViewController.swift */; };
-		04B0F3A623DB9F9E00FAF8B3 /* BleArkitSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B0F3A523DB9F9E00FAF8B3 /* BleArkitSettings.swift */; };
+		04B0F3A623DB9F9E00FAF8B3 /* BLEARKitSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B0F3A523DB9F9E00FAF8B3 /* BLEARKitSettings.swift */; };
 		04B41C9F23CF93AA00B19873 /* SCNBoxLoopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B41C9E23CF93AA00B19873 /* SCNBoxLoopViewController.swift */; };
-		04B41CA123CF948B00B19873 /* SCNBox.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04B41CA023CF948B00B19873 /* SCNBox.storyboard */; };
+		04B41CA123CF948B00B19873 /* SCNBoxLoopViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04B41CA023CF948B00B19873 /* SCNBoxLoopViewController.storyboard */; };
 		04B41CA423D3141400B19873 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B41CA323D3141400B19873 /* Constants.swift */; };
 		04B41CA623D31C8400B19873 /* UIColor+Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B41CA523D31C8400B19873 /* UIColor+Common.swift */; };
 		04C39E3123124BD20027979B /* UIImage+Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C39E3023124BD20027979B /* UIImage+Common.swift */; };
@@ -107,9 +107,9 @@
 		046126CF2268811B002AB0ED /* SetMirrorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetMirrorViewController.swift; sourceTree = "<group>"; };
 		046126D222688579002AB0ED /* Card.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Card.storyboard; sourceTree = "<group>"; };
 		046126D42268858A002AB0ED /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
-		0468120923D89001002A99AE /* BleArkitDrawer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BleArkitDrawer.storyboard; sourceTree = "<group>"; };
-		0468120B23D89031002A99AE /* BleArkitDrawerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BleArkitDrawerViewController.swift; sourceTree = "<group>"; };
-		046CCBDC23D45B85004A342A /* DrawerMenu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DrawerMenu.storyboard; sourceTree = "<group>"; };
+		0468120923D89001002A99AE /* BLEARKitDrawerViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BLEARKitDrawerViewController.storyboard; sourceTree = "<group>"; };
+		0468120B23D89031002A99AE /* BLEARKitDrawerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEARKitDrawerViewController.swift; sourceTree = "<group>"; };
+		046CCBDC23D45B85004A342A /* DrawerMenuViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DrawerMenuViewController.storyboard; sourceTree = "<group>"; };
 		046CCBDD23D45B85004A342A /* DrawerMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerMenuViewController.swift; sourceTree = "<group>"; };
 		046CCBDE23D45B85004A342A /* DrawerApp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DrawerApp.storyboard; sourceTree = "<group>"; };
 		046CCBE023D45B85004A342A /* DrawerMainSampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerMainSampleViewController.swift; sourceTree = "<group>"; };
@@ -121,15 +121,15 @@
 		046CCBF023D45C7E004A342A /* UIStoryboard+Instantiate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Instantiate.swift"; sourceTree = "<group>"; };
 		046CCBF223D45CA3004A342A /* UIView+Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Animation.swift"; sourceTree = "<group>"; };
 		046CCBF423D4A8E3004A342A /* BLESerialViewController3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLESerialViewController3.swift; sourceTree = "<group>"; };
-		046CCBFA23D7540D004A342A /* BleArkit.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BleArkit.storyboard; sourceTree = "<group>"; };
-		046CCBFC23D7541E004A342A /* BleArkitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BleArkitViewController.swift; sourceTree = "<group>"; };
-		046CCBFF23D880FD004A342A /* BleArkitMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BleArkitMenu.storyboard; sourceTree = "<group>"; };
-		046CCC0123D88109004A342A /* BleArkitMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BleArkitMenuViewController.swift; sourceTree = "<group>"; };
+		046CCBFA23D7540D004A342A /* BLEARKitViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BLEARKitViewController.storyboard; sourceTree = "<group>"; };
+		046CCBFC23D7541E004A342A /* BLEARKitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEARKitViewController.swift; sourceTree = "<group>"; };
+		046CCBFF23D880FD004A342A /* BLEARKitMenuViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BLEARKitMenuViewController.storyboard; sourceTree = "<group>"; };
+		046CCC0123D88109004A342A /* BLEARKitMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEARKitMenuViewController.swift; sourceTree = "<group>"; };
 		046CCC0323D8820E004A342A /* EllipseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EllipseButton.swift; sourceTree = "<group>"; };
 		047178F4232191FA00E0CE22 /* ObjectDistance3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectDistance3ViewController.swift; sourceTree = "<group>"; };
-		04B0F3A523DB9F9E00FAF8B3 /* BleArkitSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BleArkitSettings.swift; sourceTree = "<group>"; };
+		04B0F3A523DB9F9E00FAF8B3 /* BLEARKitSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEARKitSettings.swift; sourceTree = "<group>"; };
 		04B41C9E23CF93AA00B19873 /* SCNBoxLoopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCNBoxLoopViewController.swift; sourceTree = "<group>"; };
-		04B41CA023CF948B00B19873 /* SCNBox.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SCNBox.storyboard; sourceTree = "<group>"; };
+		04B41CA023CF948B00B19873 /* SCNBoxLoopViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SCNBoxLoopViewController.storyboard; sourceTree = "<group>"; };
 		04B41CA323D3141400B19873 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		04B41CA523D31C8400B19873 /* UIColor+Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Common.swift"; sourceTree = "<group>"; };
 		04C39E3023124BD20027979B /* UIImage+Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Common.swift"; sourceTree = "<group>"; };
@@ -308,7 +308,7 @@
 		046CCBDB23D45B85004A342A /* Menu Contents */ = {
 			isa = PBXGroup;
 			children = (
-				046CCBDC23D45B85004A342A /* DrawerMenu.storyboard */,
+				046CCBDC23D45B85004A342A /* DrawerMenuViewController.storyboard */,
 				046CCBDD23D45B85004A342A /* DrawerMenuViewController.swift */,
 			);
 			path = "Menu Contents";
@@ -336,7 +336,7 @@
 			isa = PBXGroup;
 			children = (
 				046CCBF723D753AF004A342A /* ViewController */,
-				04B0F3A523DB9F9E00FAF8B3 /* BleArkitSettings.swift */,
+				04B0F3A523DB9F9E00FAF8B3 /* BLEARKitSettings.swift */,
 			);
 			path = "ARkit & BLE Serial";
 			sourceTree = "<group>";
@@ -346,8 +346,8 @@
 			children = (
 				046CCBF923D753CA004A342A /* Side */,
 				046CCBF823D753C3004A342A /* Main */,
-				0468120923D89001002A99AE /* BleArkitDrawer.storyboard */,
-				0468120B23D89031002A99AE /* BleArkitDrawerViewController.swift */,
+				0468120923D89001002A99AE /* BLEARKitDrawerViewController.storyboard */,
+				0468120B23D89031002A99AE /* BLEARKitDrawerViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -355,8 +355,8 @@
 		046CCBF823D753C3004A342A /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				046CCBFA23D7540D004A342A /* BleArkit.storyboard */,
-				046CCBFC23D7541E004A342A /* BleArkitViewController.swift */,
+				046CCBFA23D7540D004A342A /* BLEARKitViewController.storyboard */,
+				046CCBFC23D7541E004A342A /* BLEARKitViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -364,8 +364,8 @@
 		046CCBF923D753CA004A342A /* Side */ = {
 			isa = PBXGroup;
 			children = (
-				046CCBFF23D880FD004A342A /* BleArkitMenu.storyboard */,
-				046CCC0123D88109004A342A /* BleArkitMenuViewController.swift */,
+				046CCBFF23D880FD004A342A /* BLEARKitMenuViewController.storyboard */,
+				046CCC0123D88109004A342A /* BLEARKitMenuViewController.swift */,
 			);
 			path = Side;
 			sourceTree = "<group>";
@@ -374,7 +374,7 @@
 			isa = PBXGroup;
 			children = (
 				04B41C9E23CF93AA00B19873 /* SCNBoxLoopViewController.swift */,
-				04B41CA023CF948B00B19873 /* SCNBox.storyboard */,
+				04B41CA023CF948B00B19873 /* SCNBoxLoopViewController.storyboard */,
 			);
 			path = "SCNBox Loop";
 			sourceTree = "<group>";
@@ -520,20 +520,20 @@
 				046CCBEB23D45B85004A342A /* DrawerMainSample.storyboard in Resources */,
 				0461268F2268559E002AB0ED /* art.scnassets in Resources */,
 				046126CE2268810A002AB0ED /* SetMirror.storyboard in Resources */,
-				046CCC0023D880FD004A342A /* BleArkitMenu.storyboard in Resources */,
+				046CCC0023D880FD004A342A /* BLEARKitMenuViewController.storyboard in Resources */,
 				046126C322686461002AB0ED /* Drawing.storyboard in Resources */,
 				D0DF9658241A278700B22661 /* SimulateImageViewController.storyboard in Resources */,
 				046126992268559F002AB0ED /* LaunchScreen.storyboard in Resources */,
-				04B41CA123CF948B00B19873 /* SCNBox.storyboard in Resources */,
+				04B41CA123CF948B00B19873 /* SCNBoxLoopViewController.storyboard in Resources */,
 				046126962268559F002AB0ED /* Assets.xcassets in Resources */,
-				0468120A23D89001002A99AE /* BleArkitDrawer.storyboard in Resources */,
-				046CCBFB23D7540D004A342A /* BleArkit.storyboard in Resources */,
+				0468120A23D89001002A99AE /* BLEARKitDrawerViewController.storyboard in Resources */,
+				046CCBFB23D7540D004A342A /* BLEARKitViewController.storyboard in Resources */,
 				04C39E3623124C820027979B /* ObjectDistance.storyboard in Resources */,
 				046126BE22685616002AB0ED /* SetShip.storyboard in Resources */,
 				046CCBE923D45B85004A342A /* DrawerApp.storyboard in Resources */,
 				046126942268559E002AB0ED /* Main.storyboard in Resources */,
 				046126D322688579002AB0ED /* Card.storyboard in Resources */,
-				046CCBE723D45B85004A342A /* DrawerMenu.storyboard in Resources */,
+				046CCBE723D45B85004A342A /* DrawerMenuViewController.storyboard in Resources */,
 				045BD90C23782500003CC8FD /* BLESerial.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -559,22 +559,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				046CCBFD23D7541E004A342A /* BleArkitViewController.swift in Sources */,
+				046CCBFD23D7541E004A342A /* BLEARKitViewController.swift in Sources */,
 				046CCBED23D45B85004A342A /* DrawerNavigationController.swift in Sources */,
 				046CCBEA23D45B85004A342A /* DrawerMainSampleViewController.swift in Sources */,
 				04B41CA623D31C8400B19873 /* UIColor+Common.swift in Sources */,
 				043205AD23C7E9B900B6BF4C /* BLESerialViewController2.swift in Sources */,
 				D0DF965A241A27A700B22661 /* SimulateImageViewController.swift in Sources */,
-				046CCC0223D88109004A342A /* BleArkitMenuViewController.swift in Sources */,
+				046CCC0223D88109004A342A /* BLEARKitMenuViewController.swift in Sources */,
 				046CCBF523D4A8E3004A342A /* BLESerialViewController3.swift in Sources */,
-				0468120C23D89031002A99AE /* BleArkitDrawerViewController.swift in Sources */,
+				0468120C23D89031002A99AE /* BLEARKitDrawerViewController.swift in Sources */,
 				04388467231E4D10004B0CE2 /* ObjectDistance2ViewController.swift in Sources */,
 				046CCBF323D45CA3004A342A /* UIView+Animation.swift in Sources */,
 				047178F5232191FA00E0CE22 /* ObjectDistance3ViewController.swift in Sources */,
 				046126C522686482002AB0ED /* DrawingViewController.swift in Sources */,
 				046126D52268858A002AB0ED /* CardViewController.swift in Sources */,
 				046CCBEF23D45B85004A342A /* DrawerParentViewController.swift in Sources */,
-				04B0F3A623DB9F9E00FAF8B3 /* BleArkitSettings.swift in Sources */,
+				04B0F3A623DB9F9E00FAF8B3 /* BLEARKitSettings.swift in Sources */,
 				04B41CA423D3141400B19873 /* Constants.swift in Sources */,
 				046126912268559E002AB0ED /* ViewController.swift in Sources */,
 				04B41C9F23CF93AA00B19873 /* SCNBoxLoopViewController.swift in Sources */,

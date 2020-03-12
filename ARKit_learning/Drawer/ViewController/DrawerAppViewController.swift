@@ -16,8 +16,8 @@ final class DrawerAppViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        mainViewController = DrawerNavigationController(rootViewController: UIStoryboard.instantiate(name: "SCNBox"), leftBarIcon: UIImage(named: "navbar_icon")!)
-        menuViewController = UIStoryboard.instantiate(name: "DrawerMenu")
+        mainViewController = DrawerNavigationController(rootViewController: UIStoryboard.instantiate(name: "SCNBoxLoopViewController"), leftBarIcon: UIImage(named: "navbar_icon")!)
+        menuViewController = UIStoryboard.instantiate(name: "DrawerMenuViewController")
         drawerViewController = DrawerParentViewController(mainViewController: mainViewController,
                                                           menuViewController: menuViewController,
                                                           drawerOption: DrawerOption(menuViewWidth: view.bounds.width * 0.7))
