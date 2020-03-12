@@ -57,6 +57,8 @@
 		04C39E3123124BD20027979B /* UIImage+Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C39E3023124BD20027979B /* UIImage+Common.swift */; };
 		04C39E3323124C150027979B /* ObjectDistanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C39E3223124C150027979B /* ObjectDistanceViewController.swift */; };
 		04C39E3623124C820027979B /* ObjectDistance.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04C39E3523124C820027979B /* ObjectDistance.storyboard */; };
+		D0DF9658241A278700B22661 /* SimulateImageViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0DF9657241A278700B22661 /* SimulateImageViewController.storyboard */; };
+		D0DF965A241A27A700B22661 /* SimulateImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DF9659241A27A700B22661 /* SimulateImageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -133,6 +135,8 @@
 		04C39E3023124BD20027979B /* UIImage+Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Common.swift"; sourceTree = "<group>"; };
 		04C39E3223124C150027979B /* ObjectDistanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectDistanceViewController.swift; sourceTree = "<group>"; };
 		04C39E3523124C820027979B /* ObjectDistance.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ObjectDistance.storyboard; sourceTree = "<group>"; };
+		D0DF9657241A278700B22661 /* SimulateImageViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SimulateImageViewController.storyboard; sourceTree = "<group>"; };
+		D0DF9659241A27A700B22661 /* SimulateImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulateImageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -402,6 +406,8 @@
 				04C39E3523124C820027979B /* ObjectDistance.storyboard */,
 				04388466231E4D10004B0CE2 /* ObjectDistance2ViewController.swift */,
 				047178F4232191FA00E0CE22 /* ObjectDistance3ViewController.swift */,
+				D0DF9657241A278700B22661 /* SimulateImageViewController.storyboard */,
+				D0DF9659241A27A700B22661 /* SimulateImageViewController.swift */,
 			);
 			path = "Object Distance";
 			sourceTree = "<group>";
@@ -516,6 +522,7 @@
 				046126CE2268810A002AB0ED /* SetMirror.storyboard in Resources */,
 				046CCC0023D880FD004A342A /* BleArkitMenu.storyboard in Resources */,
 				046126C322686461002AB0ED /* Drawing.storyboard in Resources */,
+				D0DF9658241A278700B22661 /* SimulateImageViewController.storyboard in Resources */,
 				046126992268559F002AB0ED /* LaunchScreen.storyboard in Resources */,
 				04B41CA123CF948B00B19873 /* SCNBox.storyboard in Resources */,
 				046126962268559F002AB0ED /* Assets.xcassets in Resources */,
@@ -557,6 +564,7 @@
 				046CCBEA23D45B85004A342A /* DrawerMainSampleViewController.swift in Sources */,
 				04B41CA623D31C8400B19873 /* UIColor+Common.swift in Sources */,
 				043205AD23C7E9B900B6BF4C /* BLESerialViewController2.swift in Sources */,
+				D0DF965A241A27A700B22661 /* SimulateImageViewController.swift in Sources */,
 				046CCC0223D88109004A342A /* BleArkitMenuViewController.swift in Sources */,
 				046CCBF523D4A8E3004A342A /* BLESerialViewController3.swift in Sources */,
 				0468120C23D89031002A99AE /* BleArkitDrawerViewController.swift in Sources */,
