@@ -63,7 +63,6 @@ extension BLEARKitViewController: ARSCNViewDelegate {
         if let imageAnchor = anchor as? ARImageAnchor {
             
             if (imageAnchor.referenceImage.name?.contains("rail"))! {
-                let size = imageAnchor.referenceImage.physicalSize
                 /// width:1 = 1m
                 /// imageAnchorに対して正面をみたとき
                 /// width: 横幅
@@ -84,10 +83,15 @@ extension BLEARKitViewController: ARSCNViewDelegate {
                 for (yIndex, yData) in sensorData.enumerated() {
                     for (zIndex, zData) in yData.enumerated() {
                         for (xIndex, xData) in zData.enumerated() {
-                            let box = SCNBox(width: BLEARKitSettings.Constants.scnBoxSizeX, height: BLEARKitSettings.Constants.scnBoxSizeY, length: BLEARKitSettings.Constants.scnBoxSizeZ, chamferRadius: 0)
+                            let box = SCNBox(width: BLEARKitSettings.scnBoxSizeX,
+                                             height: BLEARKitSettings.scnBoxSizeY,
+                                             length: BLEARKitSettings.scnBoxSizeZ,
+                                             chamferRadius: 0)
                             box.firstMaterial?.diffuse.contents = commonSetting.getHeatColor(data: xData).withAlphaComponent(0.5)
                             let boxNode = SCNNode(geometry: box)
-                            boxNode.position = SCNVector3(boxNode.position.x - 0.122625 + (Float(xIndex) * 0.01), boxNode.position.y + (Float(yIndex) * 0.01), boxNode.position.z - 0.0435 + (Float(zIndex) * 0.01))
+                            boxNode.position = SCNVector3(boxNode.position.x - 0.122625 + (Float(xIndex) * 0.01),
+                                                          boxNode.position.y + (Float(yIndex) * 0.01),
+                                                          boxNode.position.z - 0.0435 + (Float(zIndex) * 0.01))
                             boxNode.name = String(xData)
                             boxNodes.append(boxNode)
                             node.addChildNode(boxNode)

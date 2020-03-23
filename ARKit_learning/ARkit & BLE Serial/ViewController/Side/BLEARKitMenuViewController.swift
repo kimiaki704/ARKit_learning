@@ -21,9 +21,9 @@ final class BLEARKitMenuViewController: UIViewController, CBCentralManagerDelega
     private var nodeData: [[[Double]]] = []
     private var nodeCounter: Int = 0
     
-    private var numberOfX: Int = BLEARKitSettings.Constants.numberOfX
-    private var numberOfY: Int = BLEARKitSettings.Constants.numberOfY
-    private var numberOfZ: Int = BLEARKitSettings.Constants.numberOfZ
+    private var numberOfX: Int = BLEARKitSettings.numberOfX
+    private var numberOfY: Int = BLEARKitSettings.numberOfY
+    private var numberOfZ: Int = BLEARKitSettings.numberOfZ
     private var numberOfAll: Int {
         return numberOfX * numberOfY * numberOfZ
     }
@@ -160,8 +160,6 @@ final class BLEARKitMenuViewController: UIViewController, CBCentralManagerDelega
             return double / 1000
         })
         nodeCounter += dataDoubleArray.count
-        print(dataDoubleArray)
-        print(data)
         for data in dataDoubleArray {
             xArray.append(data)
             if xArray.count == numberOfX {

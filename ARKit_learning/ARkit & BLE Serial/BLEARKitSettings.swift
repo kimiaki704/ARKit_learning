@@ -8,13 +8,11 @@
 
 import UIKit
 
-final class BLEARKitSettings {
-    enum Constants {
-        static let scnBoxSizeX: CGFloat = 0.01
-        static let scnBoxSizeY: CGFloat = 0.01
-        static let scnBoxSizeZ: CGFloat = 0.01
-        static let numberOfX: Int = 25
-        static let numberOfY: Int = 8
-        static let numberOfZ: Int = 9
-    }
+enum BLEARKitSettings {
+    static let scnBoxSizeX: CGFloat = 0.01
+    static let scnBoxSizeY: CGFloat = 0.01
+    static let scnBoxSizeZ: CGFloat = 0.01
+    static let numberOfX: Int = 25
+    static let numberOfY: Int = 8
+    static let numberOfZ: Int = 9
 }
