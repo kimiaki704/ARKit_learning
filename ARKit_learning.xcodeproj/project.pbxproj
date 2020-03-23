@@ -57,6 +57,10 @@
 		04C39E3123124BD20027979B /* UIImage+Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C39E3023124BD20027979B /* UIImage+Common.swift */; };
 		04C39E3323124C150027979B /* ObjectDistanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C39E3223124C150027979B /* ObjectDistanceViewController.swift */; };
 		04C39E3623124C820027979B /* ObjectDistance.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04C39E3523124C820027979B /* ObjectDistance.storyboard */; };
+		D048538A242849FE00A9B568 /* SCNBoxLoopSideMenuViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0485389242849FE00A9B568 /* SCNBoxLoopSideMenuViewController.storyboard */; };
+		D048538C24284A0400A9B568 /* SCNBoxLoopSideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D048538B24284A0400A9B568 /* SCNBoxLoopSideMenuViewController.swift */; };
+		D048538E24284AFA00A9B568 /* SCNBoxLoopAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D048538D24284AFA00A9B568 /* SCNBoxLoopAppViewController.swift */; };
+		D048539024284B0500A9B568 /* SCNBoxLoopAppViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D048538F24284B0500A9B568 /* SCNBoxLoopAppViewController.storyboard */; };
 		D0DF9658241A278700B22661 /* SimulateImageViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0DF9657241A278700B22661 /* SimulateImageViewController.storyboard */; };
 		D0DF965A241A27A700B22661 /* SimulateImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DF9659241A27A700B22661 /* SimulateImageViewController.swift */; };
 /* End PBXBuildFile section */
@@ -135,6 +139,10 @@
 		04C39E3023124BD20027979B /* UIImage+Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Common.swift"; sourceTree = "<group>"; };
 		04C39E3223124C150027979B /* ObjectDistanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectDistanceViewController.swift; sourceTree = "<group>"; };
 		04C39E3523124C820027979B /* ObjectDistance.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ObjectDistance.storyboard; sourceTree = "<group>"; };
+		D0485389242849FE00A9B568 /* SCNBoxLoopSideMenuViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SCNBoxLoopSideMenuViewController.storyboard; sourceTree = "<group>"; };
+		D048538B24284A0400A9B568 /* SCNBoxLoopSideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCNBoxLoopSideMenuViewController.swift; sourceTree = "<group>"; };
+		D048538D24284AFA00A9B568 /* SCNBoxLoopAppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCNBoxLoopAppViewController.swift; sourceTree = "<group>"; };
+		D048538F24284B0500A9B568 /* SCNBoxLoopAppViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SCNBoxLoopAppViewController.storyboard; sourceTree = "<group>"; };
 		D0DF9657241A278700B22661 /* SimulateImageViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SimulateImageViewController.storyboard; sourceTree = "<group>"; };
 		D0DF9659241A27A700B22661 /* SimulateImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulateImageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -198,11 +206,11 @@
 		0461268B2268559E002AB0ED /* ARKit_learning */ = {
 			isa = PBXGroup;
 			children = (
-				D04853862428494400A9B568 /* SimulateImage */,
+				D04853862428494400A9B568 /* Simulate Image */,
 				04B41C9D23CF935C00B19873 /* SCNBox Loop */,
 				046CCBF623D7533E004A342A /* ARkit & BLE Serial */,
 				D0485385242848DC00A9B568 /* Sample */,
-				046CCBD923D45B85004A342A /* Drawer */,
+				046CCBE423D45B85004A342A /* Drawer Component */,
 				04B41CA223D3135000B19873 /* Common */,
 				04C39E2F23124B9A0027979B /* Extension */,
 				0461268C2268559E002AB0ED /* AppDelegate.swift */,
@@ -283,7 +291,6 @@
 			isa = PBXGroup;
 			children = (
 				046CCBDA23D45B85004A342A /* ViewController */,
-				046CCBE423D45B85004A342A /* Drawer Component */,
 			);
 			path = Drawer;
 			sourceTree = "<group>";
@@ -295,7 +302,6 @@
 				046CCBDF23D45B85004A342A /* Main Contents */,
 				046CCBDE23D45B85004A342A /* DrawerApp.storyboard */,
 				046CCBE223D45B85004A342A /* DrawerAppViewController.swift */,
-				046CCBE323D45B85004A342A /* DrawerNavigationController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -321,6 +327,7 @@
 		046CCBE423D45B85004A342A /* Drawer Component */ = {
 			isa = PBXGroup;
 			children = (
+				046CCBE323D45B85004A342A /* DrawerNavigationController.swift */,
 				046CCBE523D45B85004A342A /* DrawerOption.swift */,
 				046CCBE623D45B85004A342A /* DrawerParentViewController.swift */,
 			);
@@ -370,6 +377,8 @@
 			children = (
 				D0485388242849B800A9B568 /* Menu Contents */,
 				D0485387242849A200A9B568 /* Main Contents */,
+				D048538D24284AFA00A9B568 /* SCNBoxLoopAppViewController.swift */,
+				D048538F24284B0500A9B568 /* SCNBoxLoopAppViewController.storyboard */,
 			);
 			path = "SCNBox Loop";
 			sourceTree = "<group>";
@@ -408,6 +417,7 @@
 		D0485385242848DC00A9B568 /* Sample */ = {
 			isa = PBXGroup;
 			children = (
+				046CCBD923D45B85004A342A /* Drawer */,
 				04C39E3423124C1C0027979B /* Object Distance */,
 				045BD90A237824CF003CC8FD /* BLESerial */,
 				046126D122688561002AB0ED /* Card */,
@@ -419,13 +429,13 @@
 			path = Sample;
 			sourceTree = "<group>";
 		};
-		D04853862428494400A9B568 /* SimulateImage */ = {
+		D04853862428494400A9B568 /* Simulate Image */ = {
 			isa = PBXGroup;
 			children = (
 				D0DF9657241A278700B22661 /* SimulateImageViewController.storyboard */,
 				D0DF9659241A27A700B22661 /* SimulateImageViewController.swift */,
 			);
-			path = SimulateImage;
+			path = "Simulate Image";
 			sourceTree = "<group>";
 		};
 		D0485387242849A200A9B568 /* Main Contents */ = {
@@ -440,6 +450,8 @@
 		D0485388242849B800A9B568 /* Menu Contents */ = {
 			isa = PBXGroup;
 			children = (
+				D0485389242849FE00A9B568 /* SCNBoxLoopSideMenuViewController.storyboard */,
+				D048538B24284A0400A9B568 /* SCNBoxLoopSideMenuViewController.swift */,
 			);
 			path = "Menu Contents";
 			sourceTree = "<group>";
@@ -558,12 +570,14 @@
 				046126992268559F002AB0ED /* LaunchScreen.storyboard in Resources */,
 				04B41CA123CF948B00B19873 /* SCNBoxLoopViewController.storyboard in Resources */,
 				046126962268559F002AB0ED /* Assets.xcassets in Resources */,
+				D048538A242849FE00A9B568 /* SCNBoxLoopSideMenuViewController.storyboard in Resources */,
 				0468120A23D89001002A99AE /* BLEARKitDrawerViewController.storyboard in Resources */,
 				046CCBFB23D7540D004A342A /* BLEARKitViewController.storyboard in Resources */,
 				04C39E3623124C820027979B /* ObjectDistance.storyboard in Resources */,
 				046126BE22685616002AB0ED /* SetShip.storyboard in Resources */,
 				046CCBE923D45B85004A342A /* DrawerApp.storyboard in Resources */,
 				046126942268559E002AB0ED /* Main.storyboard in Resources */,
+				D048539024284B0500A9B568 /* SCNBoxLoopAppViewController.storyboard in Resources */,
 				046126D322688579002AB0ED /* Card.storyboard in Resources */,
 				046CCBE723D45B85004A342A /* DrawerMenuViewController.storyboard in Resources */,
 				045BD90C23782500003CC8FD /* BLESerial.storyboard in Resources */,
@@ -592,6 +606,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				046CCBFD23D7541E004A342A /* BLEARKitViewController.swift in Sources */,
+				D048538C24284A0400A9B568 /* SCNBoxLoopSideMenuViewController.swift in Sources */,
 				046CCBED23D45B85004A342A /* DrawerNavigationController.swift in Sources */,
 				046CCBEA23D45B85004A342A /* DrawerMainSampleViewController.swift in Sources */,
 				04B41CA623D31C8400B19873 /* UIColor+Common.swift in Sources */,
@@ -622,6 +637,7 @@
 				0461268D2268559E002AB0ED /* AppDelegate.swift in Sources */,
 				046CCBE823D45B85004A342A /* DrawerMenuViewController.swift in Sources */,
 				046CCBEE23D45B85004A342A /* DrawerOption.swift in Sources */,
+				D048538E24284AFA00A9B568 /* SCNBoxLoopAppViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

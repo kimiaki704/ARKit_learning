@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Box Loop Side Menu View Controller-->
+        <scene sceneID="Etw-te-5Nd">
+            <objects>
+                <viewController id="ndG-bp-xPU" customClass="SCNBoxLoopSideMenuViewController" customModule="ARKit_learning" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Tte-7h-Of7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="LaH-XF-Fzv">
+                                <rect key="frame" x="105" y="433" width="204" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="Tg6-gS-dgd"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="sliderChanged:" destination="ndG-bp-xPU" eventType="valueChanged" id="ZPN-X5-HNn"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pJn-0D-iMZ">
+                                <rect key="frame" x="186" y="362" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YxU-bo-O5H">
+                                <rect key="frame" x="132" y="493" width="150" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Cgr-Z3-Zhg"/>
+                                    <constraint firstAttribute="width" constant="150" id="JSP-Zc-csW"/>
+                                </constraints>
+                                <state key="normal" title="OK">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="okButtonTapped:" destination="ndG-bp-xPU" eventType="touchUpInside" id="2A4-Nm-V3g"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="LaH-XF-Fzv" firstAttribute="top" secondItem="pJn-0D-iMZ" secondAttribute="bottom" constant="50" id="2c6-OC-nf0"/>
+                            <constraint firstItem="YxU-bo-O5H" firstAttribute="centerX" secondItem="Tte-7h-Of7" secondAttribute="centerX" id="WjE-t3-ich"/>
+                            <constraint firstItem="YxU-bo-O5H" firstAttribute="top" secondItem="LaH-XF-Fzv" secondAttribute="bottom" constant="30" id="c4o-Gu-xJM"/>
+                            <constraint firstItem="pJn-0D-iMZ" firstAttribute="centerX" secondItem="Tte-7h-Of7" secondAttribute="centerX" id="h35-Te-Qp2"/>
+                            <constraint firstItem="LaH-XF-Fzv" firstAttribute="centerY" secondItem="Tte-7h-Of7" secondAttribute="centerY" id="pIJ-Ew-k34"/>
+                            <constraint firstItem="LaH-XF-Fzv" firstAttribute="centerX" secondItem="Tte-7h-Of7" secondAttribute="centerX" id="yw8-bX-bG5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="UkR-g6-A2V"/>
+                    </view>
+                    <connections>
+                        <outlet property="slider" destination="LaH-XF-Fzv" id="kR5-AC-ddB"/>
+                        <outlet property="sliderValueLabel" destination="pJn-0D-iMZ" id="JbI-eG-gEF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Cz-9a-e96" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="172" y="163.26836581709148"/>
+        </scene>
+    </scenes>
+</document>

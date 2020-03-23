@@ -1,20 +1,20 @@
 //
-//  DrawerMenuViewController.swift
-//  SwiftTraining
+//  SCNBoxLoopSideMenuViewController.swift
+//  ARKit_learning
 //
-//  Created by 鈴木 公章 on 2020/01/10.
-//  Copyright © 2020 CAM, inc. All rights reserved.
+//  Created by 鈴木 公章 on 2020/03/23.
+//  Copyright © 2020 鈴木公章. All rights reserved.
 //
 
 import UIKit
 
-protocol DrawerMenuViewControllerDelegate: class {
-    func okButtonTapped(_ drawerMenuViewController: DrawerMenuViewController, sliderValue: Double)
+protocol SCNBoxLoopSideMenuViewControllerDelegate: class {
+    func okButtonTapped(_ drawerMenuViewController: SCNBoxLoopSideMenuViewController, sliderValue: Double)
 }
 
-final class DrawerMenuViewController: UIViewController {
-    weak var delegate: DrawerMenuViewControllerDelegate?
-    
+final class SCNBoxLoopSideMenuViewController: UIViewController {
+    weak var delegate: SCNBoxLoopSideMenuViewControllerDelegate?
+
     @IBOutlet private weak var sliderValueLabel: UILabel!
     @IBOutlet private weak var slider: UISlider!
     @IBAction private func okButtonTapped(_ sender: UIButton) {
@@ -24,7 +24,7 @@ final class DrawerMenuViewController: UIViewController {
     @IBAction func sliderChanged(_ sender: UISlider) {
         sliderValueLabel.text = String(sender.value * 10)
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         sliderValueLabel.text = String(slider.value * 10)

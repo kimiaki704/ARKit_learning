@@ -1,5 +1,5 @@
 //
-//  DrawerMainSampleViewController.swift
+//  DrawerMenuViewController.swift
 //  SwiftTraining
 //
 //  Created by 鈴木 公章 on 2020/01/10.
@@ -8,6 +8,4 @@
 
 import UIKit
 
-final class DrawerMainSampleViewController: UIViewController {
-    
-}
+final class DrawerMenuViewController: UIViewController {}
